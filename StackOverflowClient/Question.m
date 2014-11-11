@@ -23,7 +23,6 @@
   NSMutableArray* tempArray = [[NSMutableArray alloc] init];
   
   for (NSDictionary *item in itemsArray) {
-    NSLog(@"Parsing item");
     Question* question = [[Question alloc] init];
     NSDictionary* ownerDict = item[@"owner"];
     question.tags       = (NSArray *)   item[@"tags"];

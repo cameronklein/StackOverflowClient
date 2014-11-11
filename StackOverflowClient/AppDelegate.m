@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LaunchViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
+  
+  if ([[NSUserDefaults standardUserDefaults] valueForKey:@"access_token"] == nil) {
+    self.window.rootViewController = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:[NSBundle mainBundle]];
+  }
+  
+  
+  
   return YES;
 }
 

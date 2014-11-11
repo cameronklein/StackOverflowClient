@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" userLabel="Answer Collection View Cell" customClass="AnswerCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="473" height="284"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="473" height="284"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cray wayfarers forage single-origin coffee umami you probably haven't heard of them." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mxY-eA-8ef">
+                        <rect key="frame" x="16" y="74" width="441" height="40"/>
+                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="P1g-8u-SW3">
+                        <rect key="frame" x="8" y="8" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="jLo-0x-hRy"/>
+                            <constraint firstAttribute="width" constant="50" id="o0C-4U-Eho"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cameron Klein" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9D0-2b-5kY">
+                        <rect key="frame" x="74" y="18" width="172" height="28"/>
+                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answered" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ash-QL-mK8">
+                        <rect key="frame" x="388" y="255" width="77" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 hours ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMt-9J-RwZ">
+                        <rect key="frame" x="8" y="255" width="92" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GZa-VZ-7yz">
+                        <rect key="frame" x="32" y="167" width="425" height="56"/>
+                        <string key="text">Selvage paleo roof party, gluten-free whatever sriracha McSweeney's polaroid retro vinyl Bushwick meditation cardigan readymade. Raw denim fanny pack squid scenester, gluten-free retro single-origin coffee beard PBR&amp;B Pitchfork Williamsburg Shoreditch.</string>
+                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="12"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="aMt-9J-RwZ" firstAttribute="top" secondItem="GZa-VZ-7yz" secondAttribute="bottom" constant="32" id="ELo-gT-adg"/>
+                <constraint firstItem="mxY-eA-8ef" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="El2-g0-vv2"/>
+                <constraint firstItem="GZa-VZ-7yz" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="32" id="GZn-Xz-vgP"/>
+                <constraint firstItem="P1g-8u-SW3" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="KJs-oS-egz"/>
+                <constraint firstItem="9D0-2b-5kY" firstAttribute="leading" secondItem="P1g-8u-SW3" secondAttribute="trailing" constant="16" id="KWt-xn-oc9"/>
+                <constraint firstItem="P1g-8u-SW3" firstAttribute="centerY" secondItem="9D0-2b-5kY" secondAttribute="centerY" constant="1" id="VMf-OS-tLc"/>
+                <constraint firstAttribute="bottom" secondItem="Ash-QL-mK8" secondAttribute="bottom" constant="8" id="WeO-hu-sGV"/>
+                <constraint firstItem="GZa-VZ-7yz" firstAttribute="top" secondItem="mxY-eA-8ef" secondAttribute="bottom" constant="16" id="XHZ-Wc-8dh"/>
+                <constraint firstItem="P1g-8u-SW3" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="bvn-nc-KPI"/>
+                <constraint firstItem="mxY-eA-8ef" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="c0D-N1-3yj"/>
+                <constraint firstItem="mxY-eA-8ef" firstAttribute="top" secondItem="P1g-8u-SW3" secondAttribute="bottom" constant="16" id="d1W-5H-n90"/>
+                <constraint firstAttribute="trailing" secondItem="GZa-VZ-7yz" secondAttribute="trailing" constant="16" id="fPJ-Nr-LX9"/>
+                <constraint firstItem="aMt-9J-RwZ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="kl7-zd-90C"/>
+                <constraint firstAttribute="trailing" secondItem="Ash-QL-mK8" secondAttribute="trailing" constant="8" id="rah-JN-LzO"/>
+                <constraint firstItem="Ash-QL-mK8" firstAttribute="top" secondItem="GZa-VZ-7yz" secondAttribute="bottom" constant="32" id="s4A-Za-ON0"/>
+                <constraint firstAttribute="trailing" secondItem="mxY-eA-8ef" secondAttribute="trailing" constant="16" id="vdU-ap-Lre"/>
+                <constraint firstAttribute="bottom" secondItem="aMt-9J-RwZ" secondAttribute="bottom" constant="8" id="zEU-O9-CYh"/>
+            </constraints>
+            <size key="customSize" width="473" height="284"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="c0D-N1-3yj"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="answeredLabel" destination="Ash-QL-mK8" id="RNo-IK-MRs"/>
+                <outlet property="bodyLabel" destination="GZa-VZ-7yz" id="0qd-ll-GYe"/>
+                <outlet property="dateLabel" destination="aMt-9J-RwZ" id="ISF-E7-09U"/>
+                <outlet property="titleLabel" destination="mxY-eA-8ef" id="Zf4-Rx-Hes"/>
+                <outlet property="userImage" destination="P1g-8u-SW3" id="T37-56-STq"/>
+                <outlet property="usernameLabel" destination="9D0-2b-5kY" id="3x4-Ms-Y2W"/>
+            </connections>
+            <point key="canvasLocation" x="331.5" y="330"/>
+        </collectionViewCell>
+    </objects>
+</document>

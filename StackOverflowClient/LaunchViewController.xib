@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack Overflow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1t-SQ-JW5">
+                    <rect key="frame" x="188" y="32" width="224" height="42"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to Stack Overflow to continue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-LC-Trn">
+                    <rect key="frame" x="174" y="484" width="253" height="20"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh7-25-PrO">
+                    <rect key="frame" x="277" y="536" width="47" height="32"/>
+                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                    <state key="normal" title="Sign In">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="signInButtonPressed:" destination="-1" eventType="touchUpInside" id="hdP-G7-9Df"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="kh7-25-PrO" firstAttribute="top" secondItem="lwf-LC-Trn" secondAttribute="bottom" constant="32" id="61n-rt-JD0"/>
+                <constraint firstAttribute="centerX" secondItem="lwf-LC-Trn" secondAttribute="centerX" id="8yW-ti-hgt"/>
+                <constraint firstAttribute="centerX" secondItem="kh7-25-PrO" secondAttribute="centerX" id="EYd-en-StI"/>
+                <constraint firstItem="Y1t-SQ-JW5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="IyF-m8-xhR"/>
+                <constraint firstAttribute="bottom" secondItem="kh7-25-PrO" secondAttribute="bottom" constant="32" id="Knz-zV-Ipw"/>
+                <constraint firstItem="lwf-LC-Trn" firstAttribute="top" secondItem="Y1t-SQ-JW5" secondAttribute="bottom" constant="378" id="LcR-6f-cLh"/>
+                <constraint firstAttribute="centerX" secondItem="Y1t-SQ-JW5" secondAttribute="centerX" id="TVZ-Pp-DJB"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="LcR-6f-cLh"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="310" y="369"/>
+        </view>
+    </objects>
+</document>

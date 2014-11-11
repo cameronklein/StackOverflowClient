@@ -10,33 +10,36 @@
 #import "NetworkController.h"
 #import "Question.h"
 #import "QuestionCell.h"
+#import "SingleQuestionViewController.h"
 
 @interface DetailViewController ()
 
 @property NSArray* questions;
 @property NSDateFormatter* formatter;
+@property NetworkController* networkController;
 
 @end
 
-@implementation DetailViewController
+@implementation DetailViewController 
 
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.tableView.delegate = self;
   self.tableView.dataSource = self;
+  self.searchBar.delegate = self;
   
   [self.tableView registerNib:[UINib nibWithNibName:@"QuestionCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"CELL"];
   self.tableView.rowHeight = UITableViewAutomaticDimension;
   self.tableView.estimatedRowHeight = 48.0;
   
-  NetworkController* networkController = [[NetworkController alloc] init];
+  self.networkController = [[NetworkController alloc] init];
   
-  [networkController fetchQuestionsWithSearchTerm:@"Swift" completionHandler:^(NSArray *result, NSError *error) {
-    if (error == nil) {
-      self.questions = result;
-      [self.tableView reloadData];
-    }
-  }];
+//  [networkController fetchQuestionsWithSearchTerm:@"Swift" completionHandler:^(NSArray *result, NSError *error) {
+//    if (error == nil) {
+//      self.questions = result;
+//      [self.tableView reloadData];
+//    }
+//  }];
   
   self.formatter = [[NSDateFormatter alloc] init];
   [self.formatter setDateStyle:NSDateFormatterShortStyle];
@@ -47,8 +50,9 @@
   [super didReceiveMemoryWarning];
 }
 
+// MARK: - Table View DataSource
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  NSLog(@"%u", (unsigned int)self.questions.count);
   return self.questions.count;
 }
 
@@ -65,19 +69,39 @@
   }
   cell.tagLabel.text = tags;
   NSTimeInterval interval = (double)question.creationDate;
-  NSLog(@"%ld", (long)question.creationDate);
-  //NSLog(@"%f", interval);
   NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
-  //NSLog([date description]);
   cell.timeLabel.text = [self.formatter stringFromDate:date];
-  
-  
   
   return cell;
 }
 
--(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+  
+  SingleQuestionViewController *singleVC = [[SingleQuestionViewController alloc] init];
+  singleVC.question = self.questions[indexPath.row];
+  [self.navigationController pushViewController:singleVC animated:true];
+  
 }
+
+//MARK: - Search Bar Delegate
+
+- (void)searchBarTextShouldEndEditing:(UISearchBar *)searchBar {
+  NSLog(@"Did End Editing Called");
+  [self.networkController fetchQuestionsWithSearchTerm:searchBar.text completionHandler:^(NSArray *result, NSError *error) {
+    self.questions = result;
+    [self.tableView reloadData];
+  }];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+  NSLog(@"Button Clicked Called");
+  NSLog(@"%@", searchBar.text);
+  [self.networkController fetchQuestionsWithSearchTerm:searchBar.text completionHandler:^(NSArray *result, NSError *error) {
+    self.questions = result;
+    [self.tableView reloadData];
+  }];
+}
+
+
 
 @end
