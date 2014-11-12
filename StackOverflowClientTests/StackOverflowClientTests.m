@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "Question.h"
 
 @interface StackOverflowClientTests : XCTestCase
 
@@ -25,9 +26,17 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
+- (void)testQuestionParser {
+  NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"json"];
+  NSData *data = [NSData dataWithContentsOfFile:path];
+  NSArray *array = [Question parseJSONIntoQuestions:data];
+  
+  XCTAssertNotNil(array, @"No results");
+  Question *question = array[0];
+  
+  XCTAssertTrue([question.title isEqualToString:@"OO Writer Macro in basic to color the font"]);
+  
+  XCTAssertTrue(array.count == 30);
 }
 
 - (void)testPerformanceExample {

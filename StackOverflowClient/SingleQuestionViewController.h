@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Question.h"
 
-@interface SingleQuestionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface SingleQuestionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) Question* question;

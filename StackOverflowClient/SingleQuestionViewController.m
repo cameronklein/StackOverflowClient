@@ -29,12 +29,14 @@
   
   UINib *questionNib = [UINib nibWithNibName:@"QuestionCollectionViewCell" bundle:[NSBundle mainBundle]];
   [self.collectionView registerNib:questionNib forCellWithReuseIdentifier:@"QUESTION_CELL"];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
   
-  CGSize screenSize = self.view.bounds.size;
-  
-  UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
-  layout.itemSize = CGSizeMake(screenSize.width - 20, 300);
-  
+//  UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
+//  layout.estimatedItemSize = CGSizeMake(300, 400);
+//  [layout invalidateLayout];
   
 }
 
@@ -54,15 +56,14 @@
   
   if (indexPath.row == 0) {
     
-    NSLog(@"Trying to dequeue question cell!");
-    NSLog(@"%@", self.question.title);
+    //NSLog(@"Trying to dequeue question cell!");
+    //NSLog(@"%@", self.question.body);
     
     QuestionCollectionViewCell *questionCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"QUESTION_CELL" forIndexPath:indexPath];
     questionCell.titleLabel.text = self.question.title;
     questionCell.bodyLabel.text = self.question.body;
     questionCell.usernameLabel.text = self.question.ownerName;
     NSTimeInterval interval = (double)self.question.creationDate;
-    NSLog(@"%ld", (long)self.question.creationDate);
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
     questionCell.dateLabel.text = [self.formatter stringFromDate:date];
     //questionCell.answeredLabel.text = self.question.title;
@@ -76,19 +77,34 @@
   return nil;
 }
 
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-//  
-//  QuestionCollectionViewCell *cell = [self.collectionView cellForItemAtIndexPath:indexPath];
-//  [cell setNeedsLayout];
-//  [cell layoutIfNeeded];
-//  CGSize size = [cell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-//  NSLog(@"Height:");
-//  NSLog(@"%f", size.height);
-//  NSLog(@"Width:");
-//  NSLog(@"%f", size.height);
-//  return size;
-//  
-//}
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+  
+  return UIEdgeInsetsMake(20, 20, 20, 20);
+  
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+  
+  QuestionCollectionViewCell *cell = (QuestionCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+  cell.containerView.frame = CGRectMake(0, 0, self.view.frame.size.width - 40, 500);
+  cell.widthConstraint.constant = self.view.frame.size.width - 40;
+  [cell.bodyLabel setNeedsLayout];
+  [cell.titleLabel setNeedsLayout];
+  [cell layoutIfNeeded];
+  CGSize size = [cell systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+  NSLog(@"Height:");
+  NSLog(@"%f", size.height);
+  NSLog(@"Width:");
+  NSLog(@"%f", size.width);
+  CGFloat height = cell.bodyLabel.intrinsicContentSize.height + cell.titleLabel.intrinsicContentSize.height + 150;
+  CGSize otherSize = CGSizeMake(self.view.frame.size.width - 40, height);
+  return CGSizeMake(self.view.frame.size.width - 40, size.height);
+  
+}
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+  [collectionView.collectionViewLayout invalidateLayout];
+}
 
 
 @end
