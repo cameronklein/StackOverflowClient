@@ -19,6 +19,7 @@
 @property NSDateFormatter* formatter;
 @property NSMutableArray *shownCellIndexes;
 @property NSMutableArray *selectedCellIndexes;
+@property UIPanGestureRecognizer *panRecognizer;
 @end
 
 @implementation QuestionViewController
@@ -41,6 +42,9 @@
   UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 70)];
   headerView.backgroundColor = [UIColor clearColor];
   self.tableView.tableHeaderView = headerView;
+  
+  self.panRecognizer = [[UIPanGestureRecognizer alloc] init];
+  [self.panRecognizer addTarget:self action:@selector(didPan:)];
 
 }
 
@@ -89,9 +93,16 @@
     [cell.innerView addConstraint:cell.firstCollapsibleConstraint];
   }
   cell.titleLabel.text = question.title;
-  NSString *strippedText = [question.body kv_decodeHTMLCharacterEntities];
+  NSString *strippedText = [question.body kv_encodeHTMLCharacterEntities];
   
   cell.bodyLabel.text = strippedText;
+  cell.innerTitleLabel.text = @"Question";
+  
+  UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] init];
+  [self.panRecognizer addTarget:self action:@selector(didPan:)];
+  
+  [cell.innerInnerView addGestureRecognizer:recognizer];
+  
   
   NSString *tags = @"";
   for (NSString *tag in question.tags) {
@@ -134,8 +145,25 @@
       cell.bodyLabel.alpha = 1;
     }];
   }
+}
+
+-(void)didPan:(UIPanGestureRecognizer *)sender {
+  NSLog(@"Did pan!");
+  CGPoint startPoint;
+  UIView *touchedView = sender.view;
+  if (sender.state == UIGestureRecognizerStateBegan) {
+    startPoint = [sender locationInView:self.view];
+  } else if (sender.state == UIGestureRecognizerStateChanged) {
+    touchedView.center = CGPointMake([sender translationInView:self.view].x , touchedView.center.y);
+  } else if (sender.state == UIGestureRecognizerStateEnded) {
+    
+  }
   
 }
+
+
+
+
 
 
 @end

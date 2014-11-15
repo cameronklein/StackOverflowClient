@@ -7,44 +7,85 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QUESTION_CELL" rowHeight="212" id="KGk-i7-Jjw" customClass="QuestionCell">
-            <rect key="frame" x="0.0" y="0.0" width="487" height="212"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QUESTION_CELL" rowHeight="467" id="KGk-i7-Jjw" customClass="QuestionCell">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="467"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qU3-EG-095" userLabel="Inner View">
-                        <rect key="frame" x="16" y="8" width="455" height="195"/>
+                        <rect key="frame" x="16" y="8" width="455" height="450"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Cray wayfarers forage single-origin coffee umami you probably haven't heard of them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-zI-AKR" userLabel="Title">
-                                <rect key="frame" x="8" y="8" width="439" height="132"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="252" text="Cray wayfarers forage single-origin coffee umami you probably haven't heard of them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-zI-AKR" userLabel="Title">
+                                <rect key="frame" x="8" y="8" width="439" height="434"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test test test" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1r-7J-Ufc" userLabel="Body">
-                                <rect key="frame" x="8" y="55" width="439" height="132"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" placeholderIntrinsicWidth="439" placeholderIntrinsicHeight="57" translatesAutoresizingMaskIntoConstraints="NO" id="qsD-wt-BAl" userLabel="Inner Inner View">
+                                <rect key="frame" x="8" y="418" width="439" height="24"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test test test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1r-7J-Ufc" userLabel="Inner Title">
+                                        <rect key="frame" x="32" y="8" width="375" height="335"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test test test" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hI1-Ww-Tcn" userLabel="Body">
+                                        <rect key="frame" x="32" y="351" width="375" height="20"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="J1r-7J-Ufc" secondAttribute="trailing" constant="32" id="Dt9-ol-vsV"/>
+                                    <constraint firstItem="hI1-Ww-Tcn" firstAttribute="top" secondItem="J1r-7J-Ufc" secondAttribute="bottom" constant="8" id="GZn-3r-xgY"/>
+                                    <constraint firstAttribute="trailing" secondItem="hI1-Ww-Tcn" secondAttribute="trailing" constant="32" id="HNp-p9-f2A"/>
+                                    <constraint firstItem="hI1-Ww-Tcn" firstAttribute="top" secondItem="qsD-wt-BAl" secondAttribute="top" constant="8" id="NcO-z1-YVC"/>
+                                    <constraint firstAttribute="bottom" secondItem="hI1-Ww-Tcn" secondAttribute="bottom" constant="8" id="ZgS-PL-Jok"/>
+                                    <constraint firstItem="hI1-Ww-Tcn" firstAttribute="leading" secondItem="qsD-wt-BAl" secondAttribute="leading" constant="32" id="afH-Ym-5Fd"/>
+                                    <constraint firstItem="J1r-7J-Ufc" firstAttribute="top" secondItem="qsD-wt-BAl" secondAttribute="top" constant="8" id="cyV-9P-dki"/>
+                                    <constraint firstAttribute="bottom" secondItem="J1r-7J-Ufc" secondAttribute="bottom" constant="8" id="rcJ-Sl-9Bh"/>
+                                    <constraint firstItem="J1r-7J-Ufc" firstAttribute="leading" secondItem="qsD-wt-BAl" secondAttribute="leading" constant="32" id="wmx-TY-iKv"/>
+                                    <constraint firstItem="hI1-Ww-Tcn" firstAttribute="top" secondItem="J1r-7J-Ufc" secondAttribute="bottom" constant="8" id="yUa-QF-i0R"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="rcJ-Sl-9Bh"/>
+                                        <exclude reference="NcO-z1-YVC"/>
+                                        <exclude reference="yUa-QF-i0R"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2V4-ez-sNH">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5ae-zI-AKR" firstAttribute="top" secondItem="qU3-EG-095" secondAttribute="top" constant="8" id="2cZ-aO-kfE"/>
                             <constraint firstAttribute="bottom" secondItem="5ae-zI-AKR" secondAttribute="bottom" constant="8" id="5qk-jJ-UbH"/>
-                            <constraint firstAttribute="bottom" secondItem="J1r-7J-Ufc" secondAttribute="bottom" constant="8" id="CR5-7m-Afh"/>
-                            <constraint firstItem="J1r-7J-Ufc" firstAttribute="top" secondItem="5ae-zI-AKR" secondAttribute="bottom" priority="999" constant="8" id="LzK-hZ-HUd"/>
+                            <constraint firstItem="2V4-ez-sNH" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="8BQ-95-g5Y"/>
+                            <constraint firstItem="2V4-ez-sNH" firstAttribute="top" secondItem="5ae-zI-AKR" secondAttribute="bottom" priority="999" constant="8" id="Brr-2V-wpJ"/>
+                            <constraint firstItem="qsD-wt-BAl" firstAttribute="top" secondItem="2V4-ez-sNH" secondAttribute="bottom" constant="8" id="Ek7-z8-XkV"/>
+                            <constraint firstAttribute="trailing" secondItem="2V4-ez-sNH" secondAttribute="trailing" constant="8" id="RKF-Us-wSF"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="Vgd-TA-9WI"/>
                             <constraint firstItem="5ae-zI-AKR" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="Vv0-TM-4sE"/>
+                            <constraint firstItem="qsD-wt-BAl" firstAttribute="leading" secondItem="5ae-zI-AKR" secondAttribute="trailing" constant="8" id="XWt-1f-gfD"/>
+                            <constraint firstItem="5ae-zI-AKR" firstAttribute="top" secondItem="2V4-ez-sNH" secondAttribute="bottom" constant="-281" id="ZY4-VY-OqR"/>
+                            <constraint firstAttribute="bottom" secondItem="qsD-wt-BAl" secondAttribute="bottom" constant="8" id="ZyU-Pj-W27"/>
                             <constraint firstAttribute="trailing" secondItem="5ae-zI-AKR" secondAttribute="trailing" constant="8" id="a3f-Yg-Efq"/>
-                            <constraint firstAttribute="centerX" secondItem="J1r-7J-Ufc" secondAttribute="centerX" id="ci2-ZG-OEJ"/>
-                            <constraint firstAttribute="trailing" secondItem="J1r-7J-Ufc" secondAttribute="trailing" constant="8" id="hfj-rG-Hxq"/>
-                            <constraint firstItem="J1r-7J-Ufc" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="ycK-tH-LKP"/>
+                            <constraint firstItem="qsD-wt-BAl" firstAttribute="top" secondItem="5ae-zI-AKR" secondAttribute="bottom" priority="999" constant="8" id="fTx-9q-T9J"/>
+                            <constraint firstAttribute="trailing" secondItem="qsD-wt-BAl" secondAttribute="trailing" constant="8" id="oeu-HP-yyt"/>
+                            <constraint firstItem="qsD-wt-BAl" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="rme-Sm-Z8A"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="ci2-ZG-OEJ"/>
+                                <exclude reference="ZY4-VY-OqR"/>
+                                <exclude reference="XWt-1f-gfD"/>
                             </mask>
                         </variation>
                     </view>
@@ -59,12 +100,14 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="bodyLabel" destination="J1r-7J-Ufc" id="mej-bb-Jsk"/>
+                <outlet property="bodyLabel" destination="hI1-Ww-Tcn" id="YG4-B2-JOl"/>
                 <outlet property="firstCollapsibleConstraint" destination="5qk-jJ-UbH" id="tt8-KB-Iej"/>
+                <outlet property="innerInnerView" destination="qsD-wt-BAl" id="M5H-v2-pEf"/>
+                <outlet property="innerTitleLabel" destination="J1r-7J-Ufc" id="gFh-fY-Uiy"/>
                 <outlet property="innerView" destination="qU3-EG-095" id="Qnj-3V-i56"/>
                 <outlet property="titleLabel" destination="5ae-zI-AKR" id="SdR-Gz-Rky"/>
             </connections>
-            <point key="canvasLocation" x="359.5" y="244"/>
+            <point key="canvasLocation" x="359.5" y="369.5"/>
         </tableViewCell>
     </objects>
 </document>
