@@ -12,6 +12,8 @@
 
 @interface RootViewController ()
 
+@property (nonatomic, strong) NSArray *searchTypes;
+
 @end
 
 @implementation RootViewController
@@ -30,6 +32,7 @@
     self.reputationLabel.text = [self.reputationLabel.text stringByAppendingString: [user.reputation stringValue]];
   }];
   
+  self.searchTypes = @[@"Questions",@"Users"];
   
 }
 
@@ -46,11 +49,7 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
-  if (indexPath.row == 0) {
-    cell.textLabel.text = @"Questions";
-  } else {
-    cell.textLabel.text = @"Users";
-  }
+  cell.textLabel.text = self.searchTypes[indexPath.row];
   
   return cell;
 }

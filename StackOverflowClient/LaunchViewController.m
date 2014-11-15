@@ -7,6 +7,7 @@
 //
 
 #import "LaunchViewController.h"
+#import "QuestionViewController.h"
 @import WebKit;
 
 @interface LaunchViewController ()
@@ -62,5 +63,29 @@
     decisionHandler(WKNavigationActionPolicyAllow);
   }
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+  [self.searchField resignFirstResponder];
+}
+
+- (IBAction)searchButtonPressed:(id)sender {
+  QuestionViewController *vc = [[QuestionViewController alloc] initWithNibName:@"QuestionViewController" bundle:[NSBundle mainBundle]];
+  vc.searchTerm = self.searchField.text;
+  [UIView animateWithDuration:0.4
+         delay:0.2
+         options:UIViewAnimationOptionAllowUserInteraction
+         animations:^{
+           self.mainLabel.alpha = 0;
+           self.subLabel.alpha = 0;
+           self.thirdLabel.alpha = 0;
+           self.searchButton.alpha = 0;
+           self.searchField.alpha = 0;
+         }
+         completion:^(BOOL finished) {
+            [self presentViewController:vc animated:false completion:nil];
+         }];
+  
+}
+
 
 @end

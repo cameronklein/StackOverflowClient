@@ -20,7 +20,9 @@
 
 @end
 
-@implementation DetailViewController 
+@implementation DetailViewController
+
+// MARK: - Lifecycle Methods
 
 - (void)viewDidLoad {
   [super viewDidLoad];
@@ -38,6 +40,14 @@
   [self.formatter setDateStyle:NSDateFormatterShortStyle];
   
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  self.navigationItem.title = [NSString stringWithFormat:@"Search for %@", self.searchType];
+}
+
+
 
 // MARK: - Table View DataSource
 

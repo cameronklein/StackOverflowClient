@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchViewController">
             <connections>
+                <outlet property="mainLabel" destination="Y1t-SQ-JW5" id="evh-GL-t2o"/>
+                <outlet property="searchButton" destination="nat-W2-VOE" id="Yym-Xr-35A"/>
+                <outlet property="searchField" destination="OcC-cp-Rig" id="h6f-NT-vc7"/>
+                <outlet property="subLabel" destination="g4b-iZ-u45" id="qiT-Kt-fu1"/>
+                <outlet property="thirdLabel" destination="ltW-3D-gPz" id="D3T-IO-fzV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -14,20 +19,25 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="gK8-s8-HFR">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack Overflow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1t-SQ-JW5">
-                    <rect key="frame" x="188" y="32" width="224" height="42"/>
-                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="32"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <rect key="frame" x="194" y="100" width="213" height="46"/>
+                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="0.0" height="-2"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in to Stack Overflow to continue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-LC-Trn">
-                    <rect key="frame" x="174" y="484" width="253" height="20"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sign in to Stack Overflow to continue" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lwf-LC-Trn">
+                    <rect key="frame" x="78" y="484" width="253" height="20"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh7-25-PrO">
-                    <rect key="frame" x="277" y="536" width="47" height="32"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh7-25-PrO">
+                    <rect key="frame" x="181" y="536" width="47" height="32"/>
                     <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                     <state key="normal" title="Sign In">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -36,23 +46,76 @@
                         <action selector="signInButtonPressed:" destination="-1" eventType="touchUpInside" id="hdP-G7-9Df"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quick Q&amp;A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4b-iZ-u45">
+                    <rect key="frame" x="227" y="152" width="148" height="39"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="0.0" height="-2"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need help with?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OcC-cp-Rig">
+                    <rect key="frame" x="48" y="367" width="504" height="30"/>
+                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quick answers for all your coding questions." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltW-3D-gPz">
+                    <rect key="frame" x="50" y="223" width="500" height="55"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                    <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    <size key="shadowOffset" width="0.0" height="-2"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nat-W2-VOE">
+                    <rect key="frame" x="166" y="405" width="75" height="45"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                    <size key="titleShadowOffset" width="0.0" height="2"/>
+                    <state key="normal" title="Search">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="searchButtonPressed:" destination="-1" eventType="touchUpInside" id="Eyg-72-3vp"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="centerX" secondItem="g4b-iZ-u45" secondAttribute="centerX" id="0OB-BJ-Gm9"/>
+                <constraint firstItem="ltW-3D-gPz" firstAttribute="top" secondItem="g4b-iZ-u45" secondAttribute="bottom" constant="32" id="2fp-At-aIN"/>
                 <constraint firstItem="kh7-25-PrO" firstAttribute="top" secondItem="lwf-LC-Trn" secondAttribute="bottom" constant="32" id="61n-rt-JD0"/>
+                <constraint firstAttribute="bottom" secondItem="gK8-s8-HFR" secondAttribute="bottom" id="61q-RG-AZi"/>
                 <constraint firstAttribute="centerX" secondItem="lwf-LC-Trn" secondAttribute="centerX" id="8yW-ti-hgt"/>
                 <constraint firstAttribute="centerX" secondItem="kh7-25-PrO" secondAttribute="centerX" id="EYd-en-StI"/>
-                <constraint firstItem="Y1t-SQ-JW5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="32" id="IyF-m8-xhR"/>
+                <constraint firstItem="OcC-cp-Rig" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="48" id="HOf-LP-csz"/>
+                <constraint firstItem="gK8-s8-HFR" firstAttribute="leading" secondItem="nat-W2-VOE" secondAttribute="trailing" constant="-241" id="I8w-5K-a5X"/>
+                <constraint firstItem="Y1t-SQ-JW5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="IyF-m8-xhR"/>
+                <constraint firstAttribute="bottom" secondItem="nat-W2-VOE" secondAttribute="bottom" constant="150" id="JIC-1Q-cgY"/>
                 <constraint firstAttribute="bottom" secondItem="kh7-25-PrO" secondAttribute="bottom" constant="32" id="Knz-zV-Ipw"/>
                 <constraint firstItem="lwf-LC-Trn" firstAttribute="top" secondItem="Y1t-SQ-JW5" secondAttribute="bottom" constant="378" id="LcR-6f-cLh"/>
+                <constraint firstAttribute="trailing" secondItem="OcC-cp-Rig" secondAttribute="trailing" constant="48" id="MBV-uV-LP4"/>
+                <constraint firstItem="gK8-s8-HFR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SgP-ap-99K"/>
+                <constraint firstItem="nat-W2-VOE" firstAttribute="top" secondItem="OcC-cp-Rig" secondAttribute="bottom" constant="8" id="THh-Sy-Jay"/>
                 <constraint firstAttribute="centerX" secondItem="Y1t-SQ-JW5" secondAttribute="centerX" id="TVZ-Pp-DJB"/>
+                <constraint firstItem="g4b-iZ-u45" firstAttribute="top" secondItem="Y1t-SQ-JW5" secondAttribute="bottom" constant="8" id="aoL-Li-GfJ"/>
+                <constraint firstItem="ltW-3D-gPz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="dLh-eg-8cB"/>
+                <constraint firstItem="gK8-s8-HFR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eCA-4d-HJt"/>
+                <constraint firstItem="lwf-LC-Trn" firstAttribute="top" secondItem="OcC-cp-Rig" secondAttribute="bottom" constant="102" id="eM3-96-24O"/>
+                <constraint firstAttribute="centerX" secondItem="nat-W2-VOE" secondAttribute="centerX" id="pa8-Q2-oNR"/>
+                <constraint firstAttribute="trailing" secondItem="ltW-3D-gPz" secondAttribute="trailing" constant="50" id="uTr-vW-z7U"/>
+                <constraint firstAttribute="trailing" secondItem="gK8-s8-HFR" secondAttribute="trailing" id="yaa-8W-uxI"/>
             </constraints>
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="LcR-6f-cLh"/>
+                    <exclude reference="eM3-96-24O"/>
                 </mask>
             </variation>
-            <point key="canvasLocation" x="310" y="369"/>
+            <point key="canvasLocation" x="256.5" y="361"/>
         </view>
     </objects>
+    <resources>
+        <image name="Background.png" width="1920" height="3408"/>
+    </resources>
 </document>

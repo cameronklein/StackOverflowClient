@@ -123,23 +123,24 @@ static NSString *const postURL = @"https://stackexchange.com/oauth/access_token"
     NSDictionary *resultDict = [NSJSONSerialization JSONObjectWithData:value options:NSJSONReadingAllowFragments error:&error];
     NSArray *answerArray = resultDict[@"items"];
     NSString *queryString = @"";
-    for (NSDictionary *answer in answerArray) {
+    NSInteger numberOfAnswers = MIN(answerArray.count, 15);
+    for (NSInteger i = 0; i < numberOfAnswers; i++) {
+      NSDictionary *answer = answerArray[i];
       NSNumber *number = answer[@"answer_id"];
       if (![queryString  isEqual: @""]) {
         queryString = [queryString stringByAppendingString:@";"];
       }
       queryString = [queryString stringByAppendingString: [number stringValue]];
-      
     }
+    
     NSString *urlString = stackOverFlowURL;
     urlString = [urlString stringByAppendingString:@"answers/"];
     urlString = [urlString stringByAppendingString:queryString];
     urlString = [urlString stringByAppendingString:@"?filter=withbody"];
     urlString = [urlString stringByAppendingString:[self getAuthenticatedURLQueries]];
     
-    
     NSLog(@"%@", urlString);
-    NSURL *url = [NSURL URLWithString:urlString];
+    NSURL *url = [NSURL URLWithString: urlString];
     
     [self fetchDataFromURL:url completionHandler:^(id value) {
       NSArray *array = [Answer parseJSONIntoAnswers:value];

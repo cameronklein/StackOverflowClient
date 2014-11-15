@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="14B23" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -7,49 +7,64 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="KGk-i7-Jjw" customClass="QuestionCell">
-            <rect key="frame" x="0.0" y="0.0" width="464" height="82"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="QUESTION_CELL" rowHeight="212" id="KGk-i7-Jjw" customClass="QuestionCell">
+            <rect key="frame" x="0.0" y="0.0" width="487" height="212"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Cray wayfarers forage single-origin coffee umami you probably haven't heard of them." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-zI-AKR">
-                        <rect key="frame" x="16" y="8" width="432" height="40"/>
-                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="4 days ago" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWL-5I-6BR">
-                        <rect key="frame" x="8" y="55" width="53" height="20"/>
-                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="#swift #fart #puppies" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="412-1m-i2h">
-                        <rect key="frame" x="356" y="55" width="100" height="18"/>
-                        <fontDescription key="fontDescription" name="AvenirNextCondensed-Regular" family="Avenir Next Condensed" pointSize="14"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qU3-EG-095" userLabel="Inner View">
+                        <rect key="frame" x="16" y="8" width="455" height="195"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" misplaced="YES" text="Cray wayfarers forage single-origin coffee umami you probably haven't heard of them." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ae-zI-AKR" userLabel="Title">
+                                <rect key="frame" x="8" y="8" width="439" height="132"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Test test test" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J1r-7J-Ufc" userLabel="Body">
+                                <rect key="frame" x="8" y="55" width="439" height="132"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5ae-zI-AKR" firstAttribute="top" secondItem="qU3-EG-095" secondAttribute="top" constant="8" id="2cZ-aO-kfE"/>
+                            <constraint firstAttribute="bottom" secondItem="5ae-zI-AKR" secondAttribute="bottom" constant="8" id="5qk-jJ-UbH"/>
+                            <constraint firstAttribute="bottom" secondItem="J1r-7J-Ufc" secondAttribute="bottom" constant="8" id="CR5-7m-Afh"/>
+                            <constraint firstItem="J1r-7J-Ufc" firstAttribute="top" secondItem="5ae-zI-AKR" secondAttribute="bottom" priority="999" constant="8" id="LzK-hZ-HUd"/>
+                            <constraint firstItem="5ae-zI-AKR" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="Vv0-TM-4sE"/>
+                            <constraint firstAttribute="trailing" secondItem="5ae-zI-AKR" secondAttribute="trailing" constant="8" id="a3f-Yg-Efq"/>
+                            <constraint firstAttribute="centerX" secondItem="J1r-7J-Ufc" secondAttribute="centerX" id="ci2-ZG-OEJ"/>
+                            <constraint firstAttribute="trailing" secondItem="J1r-7J-Ufc" secondAttribute="trailing" constant="8" id="hfj-rG-Hxq"/>
+                            <constraint firstItem="J1r-7J-Ufc" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="ycK-tH-LKP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="ci2-ZG-OEJ"/>
+                            </mask>
+                        </variation>
+                    </view>
                 </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="412-1m-i2h" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="7Aj-35-LDm"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="412-1m-i2h" secondAttribute="bottom" id="Aus-tw-1c0"/>
-                    <constraint firstItem="EWL-5I-6BR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Vlv-pD-HAo"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="5ae-zI-AKR" secondAttribute="trailing" constant="8" id="WEm-Pi-uHz"/>
-                    <constraint firstItem="412-1m-i2h" firstAttribute="top" secondItem="5ae-zI-AKR" secondAttribute="bottom" constant="8" id="WOM-r3-2iw"/>
-                    <constraint firstItem="5ae-zI-AKR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="sto-Nw-PL1"/>
-                    <constraint firstItem="5ae-zI-AKR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="tdR-UK-Qdb"/>
-                    <constraint firstItem="EWL-5I-6BR" firstAttribute="top" secondItem="5ae-zI-AKR" secondAttribute="bottom" constant="8" id="znw-Wx-iBS"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="qU3-EG-095" secondAttribute="bottom" id="9be-qb-yKU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qU3-EG-095" secondAttribute="trailing" constant="8" id="FYg-nr-HGP"/>
+                    <constraint firstItem="qU3-EG-095" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="8" id="Ka7-Yw-40E"/>
+                    <constraint firstItem="qU3-EG-095" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="pse-8L-dMn"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
-                <outlet property="tagLabel" destination="412-1m-i2h" id="8Tf-yb-870"/>
-                <outlet property="timeLabel" destination="EWL-5I-6BR" id="L8Y-a5-89B"/>
+                <outlet property="bodyLabel" destination="J1r-7J-Ufc" id="mej-bb-Jsk"/>
+                <outlet property="firstCollapsibleConstraint" destination="5qk-jJ-UbH" id="tt8-KB-Iej"/>
+                <outlet property="innerView" destination="qU3-EG-095" id="Qnj-3V-i56"/>
                 <outlet property="titleLabel" destination="5ae-zI-AKR" id="SdR-Gz-Rky"/>
             </connections>
-            <point key="canvasLocation" x="371" y="179"/>
+            <point key="canvasLocation" x="359.5" y="244"/>
         </tableViewCell>
     </objects>
 </document>

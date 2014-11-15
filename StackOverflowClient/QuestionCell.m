@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
 
+  self.innerView.layer.cornerRadius = 5;
+  self.innerView.clipsToBounds = true;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -21,6 +21,8 @@
   
   if ([[NSUserDefaults standardUserDefaults] valueForKey:@"access_token"] == nil) {
     self.window.rootViewController = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:[NSBundle mainBundle]];
+  } else {
+    self.window.rootViewController = [[LaunchViewController alloc] initWithNibName:@"LaunchViewController" bundle:[NSBundle mainBundle]];
   }
   
   

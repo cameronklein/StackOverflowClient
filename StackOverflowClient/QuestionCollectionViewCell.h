@@ -19,6 +19,4 @@
 @property (weak, nonatomic) IBOutlet UIView *containerView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *widthConstraint;
 
-
-
 @end
