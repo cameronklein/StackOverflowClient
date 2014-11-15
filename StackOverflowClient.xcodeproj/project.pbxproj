@@ -26,9 +26,11 @@
 		7E3FD2B61A1284CA00F17611 /* QuestionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3FD2B41A1284CA00F17611 /* QuestionCollectionViewCell.xib */; };
 		7E3FD2BA1A128A1800F17611 /* AnswerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E3FD2B81A128A1800F17611 /* AnswerCollectionViewCell.m */; };
 		7E3FD2BB1A128A1800F17611 /* AnswerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E3FD2B91A128A1800F17611 /* AnswerCollectionViewCell.xib */; };
+		7E6999201A16BF4F00E1AD73 /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E69991F1A16BF4F00E1AD73 /* Answer.m */; };
 		7E879B6A1A1411F000EE2588 /* sample.json in Resources */ = {isa = PBXBuildFile; fileRef = 7E879B691A1411F000EE2588 /* sample.json */; };
 		7E879B761A14194A00EE2588 /* ProfileCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E879B751A14194A00EE2588 /* ProfileCell.m */; };
 		7E879B781A141A0B00EE2588 /* ProfileCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E879B771A141A0B00EE2588 /* ProfileCell.xib */; };
+		7E879B7B1A15211000EE2588 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E879B7A1A15211000EE2588 /* RootViewController.m */; };
 		7EC5E6D51A12B05B00B25B8F /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5E6D31A12B05B00B25B8F /* LaunchViewController.m */; };
 		7EC5E6D61A12B05B00B25B8F /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5E6D41A12B05B00B25B8F /* LaunchViewController.xib */; };
 /* End PBXBuildFile section */
@@ -76,11 +78,15 @@
 		7E3FD2B71A128A1800F17611 /* AnswerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerCollectionViewCell.h; sourceTree = "<group>"; };
 		7E3FD2B81A128A1800F17611 /* AnswerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerCollectionViewCell.m; sourceTree = "<group>"; };
 		7E3FD2B91A128A1800F17611 /* AnswerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCollectionViewCell.xib; sourceTree = "<group>"; };
+		7E69991E1A16BF4F00E1AD73 /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		7E69991F1A16BF4F00E1AD73 /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		7E879B691A1411F000EE2588 /* sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sample.json; sourceTree = "<group>"; };
 		7E879B6D1A1415A600EE2588 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		7E879B741A14194A00EE2588 /* ProfileCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileCell.h; sourceTree = "<group>"; };
 		7E879B751A14194A00EE2588 /* ProfileCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileCell.m; sourceTree = "<group>"; };
 		7E879B771A141A0B00EE2588 /* ProfileCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileCell.xib; sourceTree = "<group>"; };
+		7E879B791A15211000EE2588 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		7E879B7A1A15211000EE2588 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		7EC5E6D21A12B05B00B25B8F /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		7EC5E6D31A12B05B00B25B8F /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		7EC5E6D41A12B05B00B25B8F /* LaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 				7E3FD2A01A11729000F17611 /* User.m */,
 				7E3FD2A21A1179EF00F17611 /* Question.h */,
 				7E3FD2A31A1179EF00F17611 /* Question.m */,
+				7E69991E1A16BF4F00E1AD73 /* Answer.h */,
+				7E69991F1A16BF4F00E1AD73 /* Answer.m */,
 			);
 			name = MODEL;
 			sourceTree = "<group>";
@@ -178,6 +186,8 @@
 		7E3FD2AB1A11A82100F17611 /* CONTROLLER */ = {
 			isa = PBXGroup;
 			children = (
+				7E879B791A15211000EE2588 /* RootViewController.h */,
+				7E879B7A1A15211000EE2588 /* RootViewController.m */,
 				7E3FD27D1A11328300F17611 /* DetailViewController.h */,
 				7E3FD27E1A11328300F17611 /* DetailViewController.m */,
 				7E3FD2AD1A12829000F17611 /* SingleQuestionViewController.h */,
@@ -332,10 +342,12 @@
 				7E3FD2791A11328300F17611 /* AppDelegate.m in Sources */,
 				7E3FD2A81A11A56000F17611 /* QuestionCell.m in Sources */,
 				7E3FD2761A11328300F17611 /* main.m in Sources */,
+				7E6999201A16BF4F00E1AD73 /* Answer.m in Sources */,
 				7E3FD2A11A11729000F17611 /* User.m in Sources */,
 				7E3FD27F1A11328300F17611 /* DetailViewController.m in Sources */,
 				7E3FD2A41A1179EF00F17611 /* Question.m in Sources */,
 				7E3FD2BA1A128A1800F17611 /* AnswerCollectionViewCell.m in Sources */,
+				7E879B7B1A15211000EE2588 /* RootViewController.m in Sources */,
 				7E3FD27C1A11328300F17611 /* StackOverflowClient.xcdatamodeld in Sources */,
 				7E879B761A14194A00EE2588 /* ProfileCell.m in Sources */,
 				7E3FD2B51A1284CA00F17611 /* QuestionCollectionViewCell.m in Sources */,

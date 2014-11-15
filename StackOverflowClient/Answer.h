@@ -1,25 +1,22 @@
 //
-//  Question.h
+//  Answer.h
 //  StackOverflowClient
 //
-//  Created by Cameron Klein on 11/10/14.
+//  Created by Cameron Klein on 11/14/14.
 //  Copyright (c) 2014 Cameron Klein. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface Question : NSObject
+@interface Answer : NSObject
 
-+ (NSArray *) parseJSONIntoQuestions:(NSData *) jsonData;
++ (NSArray *) parseJSONIntoAnswers:(NSData *) jsonData;
 
-@property (nonatomic, strong) NSArray* tags;
 @property NSInteger ownerID;
-@property (nonatomic, strong) NSNumber* questionID;
 @property (nonatomic, strong) NSString* ownerName;
 @property (nonatomic, strong) NSString* ownerAvatarURL;
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSString* body;
 @property double creationDate;
-@property BOOL isAnswered;
 
 @end

@@ -10,8 +10,14 @@
 
 @interface User : NSObject
 
-@property NSInteger* reputation;
-@property NSInteger* userID;
++ (NSArray *) parseJSONIntoUsers:(NSData *) jsonData;
+
+@property NSNumber *reputation;
+@property NSNumber *userID;
+@property NSNumber *bronzeMedals;
+@property NSNumber *silverMedals;
+@property NSNumber *goldMedals;
+@property NSNumber *creationDate;
 
 @property (nonatomic, strong) NSString* displayName;
 @property (nonatomic, strong) NSString* imageURL;

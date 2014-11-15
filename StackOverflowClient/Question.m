@@ -26,12 +26,14 @@
     Question* question = [[Question alloc] init];
     NSDictionary* ownerDict = item[@"owner"];
     question.tags       = (NSArray *)   item[@"tags"];
+    question.questionID = (NSNumber *)  item[@"question_id"];
     question.ownerID    = (NSInteger)   ownerDict[@"user_id"];
     question.ownerName  = (NSString *)  ownerDict[@"display_name"];
     question.title      = (NSString *)  item[@"title"];
     question.body       = (NSString *)  item[@"body"];
     question.isAnswered = (BOOL)        item[@"is_answered"];
     question.creationDate  = [item[@"creation_date"] doubleValue];
+    question.ownerAvatarURL  = (NSString *)  ownerDict[@"profile_image"];
     [tempArray addObject:question];
   }
   

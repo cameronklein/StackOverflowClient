@@ -34,20 +34,9 @@
   
   self.networkController = [[NetworkController alloc] init];
   
-//  [networkController fetchQuestionsWithSearchTerm:@"Swift" completionHandler:^(NSArray *result, NSError *error) {
-//    if (error == nil) {
-//      self.questions = result;
-//      [self.tableView reloadData];
-//    }
-//  }];
-  
   self.formatter = [[NSDateFormatter alloc] init];
   [self.formatter setDateStyle:NSDateFormatterShortStyle];
   
-}
-
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
 }
 
 // MARK: - Table View DataSource
@@ -79,29 +68,25 @@
   
   SingleQuestionViewController *singleVC = [[SingleQuestionViewController alloc] init];
   singleVC.question = self.questions[indexPath.row];
-  [self.navigationController pushViewController:singleVC animated:true];
+  [self.splitViewController showDetailViewController:singleVC sender:self];
   
 }
 
 //MARK: - Search Bar Delegate
 
 - (void)searchBarTextShouldEndEditing:(UISearchBar *)searchBar {
-  NSLog(@"Did End Editing Called");
-  [self.networkController fetchQuestionsWithSearchTerm:searchBar.text completionHandler:^(NSArray *result, NSError *error) {
-    self.questions = result;
-    [self.tableView reloadData];
-  }];
+  [self performSearch];
 }
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-  NSLog(@"Button Clicked Called");
-  NSLog(@"%@", searchBar.text);
-  [self.networkController fetchQuestionsWithSearchTerm:searchBar.text completionHandler:^(NSArray *result, NSError *error) {
+  [self performSearch];
+}
+
+-(void)performSearch {
+  [self.networkController fetchQuestionsWithSearchTerm:self.searchBar.text completionHandler:^(NSArray *result, NSError *error) {
     self.questions = result;
     [self.tableView reloadData];
   }];
 }
-
-
 
 @end
