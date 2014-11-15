@@ -13,5 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSString *searchTerm;
 @property (weak, nonatomic) IBOutlet UINavigationBar *titleBar;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleBarTopSpaceConstraint;
 
 @end

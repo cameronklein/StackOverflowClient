@@ -37,6 +37,8 @@
 		7E879B7B1A15211000EE2588 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E879B7A1A15211000EE2588 /* RootViewController.m */; };
 		7EC5E6D51A12B05B00B25B8F /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5E6D31A12B05B00B25B8F /* LaunchViewController.m */; };
 		7EC5E6D61A12B05B00B25B8F /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5E6D41A12B05B00B25B8F /* LaunchViewController.xib */; };
+		7ED96D7D1A17D99F000538A3 /* QuestionAnswerPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ED96D7B1A17D99F000538A3 /* QuestionAnswerPage.m */; };
+		7ED96D7E1A17D99F000538A3 /* QuestionAnswerPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7ED96D7C1A17D99F000538A3 /* QuestionAnswerPage.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,9 @@
 		7EC5E6D21A12B05B00B25B8F /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		7EC5E6D31A12B05B00B25B8F /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		7EC5E6D41A12B05B00B25B8F /* LaunchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		7ED96D7A1A17D99F000538A3 /* QuestionAnswerPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionAnswerPage.h; sourceTree = "<group>"; };
+		7ED96D7B1A17D99F000538A3 /* QuestionAnswerPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionAnswerPage.m; sourceTree = "<group>"; };
+		7ED96D7C1A17D99F000538A3 /* QuestionAnswerPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionAnswerPage.xib; sourceTree = "<group>"; };
 		AC4BD308680938BEACBB8630 /* Pods-StackOverflowClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowClient/Pods-StackOverflowClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -221,6 +226,8 @@
 				7E3FD2AE1A12829000F17611 /* SingleQuestionViewController.m */,
 				7E3FD29E1A1155E900F17611 /* NetworkController.h */,
 				7E3FD29C1A1155D800F17611 /* NetworkController.m */,
+				7ED96D7A1A17D99F000538A3 /* QuestionAnswerPage.h */,
+				7ED96D7B1A17D99F000538A3 /* QuestionAnswerPage.m */,
 				7E3FD2771A11328300F17611 /* AppDelegate.h */,
 				7E3FD2781A11328300F17611 /* AppDelegate.m */,
 			);
@@ -251,6 +258,7 @@
 				7E3FD2B41A1284CA00F17611 /* QuestionCollectionViewCell.xib */,
 				7E3FD2B91A128A1800F17611 /* AnswerCollectionViewCell.xib */,
 				7E3FD2A71A11A56000F17611 /* QuestionCell.xib */,
+				7ED96D7C1A17D99F000538A3 /* QuestionAnswerPage.xib */,
 				7EC5E6D41A12B05B00B25B8F /* LaunchViewController.xib */,
 				7E3FD2AF1A12829000F17611 /* SingleQuestionViewController.xib */,
 				7E3FD2851A11328300F17611 /* LaunchScreen.xib */,
@@ -348,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED96D7E1A17D99F000538A3 /* QuestionAnswerPage.xib in Resources */,
 				7E3FD2821A11328300F17611 /* Main.storyboard in Resources */,
 				7E2B42EF1A17163200B1D890 /* Background.png in Resources */,
 				7E2B42F41A171AD700B1D890 /* QuestionViewController.xib in Resources */,
@@ -417,6 +426,7 @@
 				7E6999201A16BF4F00E1AD73 /* Answer.m in Sources */,
 				7E3FD2A11A11729000F17611 /* User.m in Sources */,
 				7E3FD27F1A11328300F17611 /* DetailViewController.m in Sources */,
+				7ED96D7D1A17D99F000538A3 /* QuestionAnswerPage.m in Sources */,
 				7E3FD2A41A1179EF00F17611 /* Question.m in Sources */,
 				7E3FD2BA1A128A1800F17611 /* AnswerCollectionViewCell.m in Sources */,
 				7E879B7B1A15211000EE2588 /* RootViewController.m in Sources */,

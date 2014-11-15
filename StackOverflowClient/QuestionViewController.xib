@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="tableView" destination="Qm5-M9-FZu" id="EZ5-40-Gkw"/>
                 <outlet property="titleBar" destination="V2W-qk-baM" id="ESl-ow-ffe"/>
+                <outlet property="titleBarTopSpaceConstraint" destination="lvX-JX-v5K" id="MVy-hY-Oje"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,7 +21,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qm5-M9-FZu">
-                    <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                     <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -31,7 +32,7 @@
                     </connections>
                 </tableView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V2W-qk-baM">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                    <rect key="frame" x="0.0" y="-64" width="600" height="64"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="Nu9-xz-Pmw"/>
                     </constraints>
@@ -57,8 +58,8 @@
                 <constraint firstItem="Qm5-M9-FZu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="M79-3G-Xhf"/>
                 <constraint firstAttribute="trailing" secondItem="Qm5-M9-FZu" secondAttribute="trailing" id="Xjk-Cn-kxd"/>
                 <constraint firstItem="V2W-qk-baM" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="amP-bT-h0w"/>
-                <constraint firstItem="Qm5-M9-FZu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="hbN-B8-s51"/>
-                <constraint firstItem="V2W-qk-baM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="lvX-JX-v5K"/>
+                <constraint firstItem="Qm5-M9-FZu" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hbN-B8-s51"/>
+                <constraint firstItem="V2W-qk-baM" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-64" id="lvX-JX-v5K"/>
                 <constraint firstItem="O6i-4G-4n9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tSk-h0-VcR"/>
                 <constraint firstAttribute="bottom" secondItem="O6i-4G-4n9" secondAttribute="bottom" id="vct-SV-CGi"/>
             </constraints>

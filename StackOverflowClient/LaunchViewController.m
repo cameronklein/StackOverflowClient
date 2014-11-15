@@ -71,6 +71,7 @@
 - (IBAction)searchButtonPressed:(id)sender {
   QuestionViewController *vc = [[QuestionViewController alloc] initWithNibName:@"QuestionViewController" bundle:[NSBundle mainBundle]];
   vc.searchTerm = self.searchField.text;
+  [vc.titleBar setItems:@[self,vc]];
   [UIView animateWithDuration:0.4
          delay:0.2
          options:UIViewAnimationOptionAllowUserInteraction

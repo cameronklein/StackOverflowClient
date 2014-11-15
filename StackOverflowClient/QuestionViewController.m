@@ -10,7 +10,7 @@
 #import "NetworkController.h"
 #import "QuestionCell.h"
 #import "Question.h"
-#import <NSString_stripHtml/NSString_stripHtml.h>
+#import <NSString-HTML/NSString+HTML.h>
 
 @interface QuestionViewController ()
 
@@ -38,10 +38,15 @@
   self.formatter = [[NSDateFormatter alloc] init];
   [self.formatter setDateStyle:NSDateFormatterShortStyle];
   
+  UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 70)];
+  headerView.backgroundColor = [UIColor clearColor];
+  self.tableView.tableHeaderView = headerView;
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  //self.titleBar.center = CGPointMake(self.titleBar.center.x, self.titleBar.center.y - 65);
   [self.netController fetchQuestionsWithSearchTerm:self.searchTerm completionHandler:^(NSArray *result, NSError *error) {
     if (error != nil) {
       NSLog(@"Oops!");
@@ -51,10 +56,22 @@
     }
   }];
   self.titleBar.topItem.title = [NSString stringWithFormat:@"Results for \"%@\"", self.searchTerm];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
+  self.titleBarTopSpaceConstraint.constant = 0;
+  [UIView animateWithDuration:0.4
+         delay:0.1
+         options:UIViewAnimationOptionAllowUserInteraction
+         animations:^{
+           [self.view layoutSubviews];
+         }
+         completion:^(BOOL finished) {
+           
+         }];
+  
 
 }
 
@@ -72,7 +89,7 @@
     [cell.innerView addConstraint:cell.firstCollapsibleConstraint];
   }
   cell.titleLabel.text = question.title;
-  NSString *strippedText = [question.body stripHtml];
+  NSString *strippedText = [question.body kv_decodeHTMLCharacterEntities];
   
   cell.bodyLabel.text = strippedText;
   
