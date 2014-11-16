@@ -25,6 +25,8 @@
     answer.ownerName  = (NSString *)  ownerDict[@"display_name"];
     answer.title      = (NSString *)  item[@"title"];
     answer.body       = (NSString *)  item[@"body"];
+    answer.score      = item[@"score"];
+    answer.isAccepted = item[@"is_accepted"];
     answer.creationDate  = [item[@"creation_date"] doubleValue];
     answer.ownerAvatarURL  = (NSString *)  ownerDict[@"profile_image"];
     [tempArray addObject:answer];

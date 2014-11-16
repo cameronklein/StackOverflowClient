@@ -8,8 +8,9 @@
 
 #import "QuestionViewController.h"
 #import "NetworkController.h"
-#import "QuestionCell.h"
 #import "Question.h"
+#import "Answer.h"
+#import "QuestionCell.h"
 #import <NSString-HTML/NSString+HTML.h>
 
 @interface QuestionViewController ()
@@ -45,6 +46,8 @@
   
   self.panRecognizer = [[UIPanGestureRecognizer alloc] init];
   [self.panRecognizer addTarget:self action:@selector(didPan:)];
+  
+  [self.backButton setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-UltraLight" size:16.0],NSForegroundColorAttributeName: [UIColor blueColor]} forState:UIControlStateNormal];
 
 }
 
@@ -75,8 +78,6 @@
          completion:^(BOOL finished) {
            
          }];
-  
-
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -92,6 +93,8 @@
     NSLog(@"Adding constraints!");
     [cell.innerView addConstraint:cell.firstCollapsibleConstraint];
   }
+  cell.tag = 0;
+  cell.scrollView.contentOffset = CGPointMake(0, 0);
   cell.titleLabel.text = question.title;
   NSString *strippedText = [question.body kv_encodeHTMLCharacterEntities];
   
@@ -100,8 +103,10 @@
   
   UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] init];
   [self.panRecognizer addTarget:self action:@selector(didPan:)];
-  
   [cell.innerInnerView addGestureRecognizer:recognizer];
+  
+  recognizer.delegate = self;
+  cell.scrollView.delegate = self;
   
   
   NSString *tags = @"";
@@ -130,19 +135,98 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+  NSLog(@"Did Select Called!");
   QuestionCell *cell = (QuestionCell *)[tableView cellForRowAtIndexPath:indexPath];
   if (cell.tag != 1) {
+    NSLog(@"Made it past if statement!");
     Question* question = self.questions[indexPath.row];
     cell.bodyLabel.text = question.body;
     cell.tag = 1;
+    cell.secondCollapsibleContstraint.constant = 32;
     [cell.titleLabel removeConstraint:cell.firstCollapsibleConstraint];
     [cell.innerView removeConstraint:cell.firstCollapsibleConstraint];
     [self.selectedCellIndexes addObject:indexPath];
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
     cell.bodyLabel.alpha = 0;
+    
+//    UIView *newView = [cell.innerInnerView copy];
+//    CGPoint newCenter = CGPointMake(cell.innerInnerView.center.x + cell.innerInnerView.frame.size.width, cell.innerInnerView.center.y);
+//    [cell.scrollView addSubview:newView];
+//    newView.center = newCenter;
+    
+    [self getTwoBestAnswersForQuestion:question completionHandler:^(NSArray *answers) {
+      NSLog(@"COMPLETION HANDLER TWO");
+      BOOL hasFirst = [answers[0] isKindOfClass:[Answer class]];
+      BOOL hasSecond = [answers[1] isKindOfClass:[Answer class]];
+      if (hasFirst && !hasSecond) {
+        Answer *answerOne = answers[0];
+        cell.firstAnswerBody.text = answerOne.body;
+        cell.firstAnswerTitle.text = @"Highest Rated Answer";
+        cell.secondAnswerTitle.text = @"No Accepted Answer";
+        cell.firstAnswerBody.alpha = 0;
+        cell.firstAnswerTitle.alpha = 0;
+        [UIView animateWithDuration:0.4 animations:^{
+          cell.firstAnswerBody.alpha = 1;
+          cell.firstAnswerTitle.alpha = 1;
+        }];
+        
+      } else if (hasFirst && hasSecond && answers[0] != answers[1]) {
+        Answer *answerOne = answers[0];
+        Answer *answerTwo = answers[1];
+        cell.firstAnswerBody.text = answerOne.body;
+        cell.firstAnswerTitle.text = @"Accepted Answer";
+        cell.secondAnswerBody.text = answerTwo.body;
+        cell.secondAnswerTitle.text = @"Highest Rated Answer";
+        cell.firstAnswerBody.alpha = 0;
+        cell.firstAnswerTitle.alpha = 0;
+        cell.secondAnswerBody.alpha = 0;
+        cell.secondAnswerTitle.alpha = 0;
+        [UIView animateWithDuration:0.4 animations:^{
+          cell.firstAnswerBody.alpha = 1;
+          cell.firstAnswerTitle.alpha = 1;
+          cell.secondAnswerBody.alpha = 1;
+          cell.secondAnswerTitle.alpha = 1;
+        }];
+        
+      } else if (hasFirst && hasSecond && answers[0] == answers[1]) {
+        Answer *answerOne = answers[0];
+        cell.firstAnswerBody.text = answerOne.body;
+        cell.firstAnswerTitle.text = @"Highest Rated/Accepted Answer";
+        cell.secondAnswerTitle.text = @"";
+        cell.firstAnswerBody.alpha = 0;
+        cell.firstAnswerTitle.alpha = 0;
+        [UIView animateWithDuration:0.4 animations:^{
+          cell.firstAnswerBody.alpha = 1;
+          cell.firstAnswerTitle.alpha = 1;
+        }];
+        
+        
+      } else {
+        cell.firstAnswerTitle.text = @"No Answers Yet :(";
+        cell.secondAnswerTitle.text = @"No Answers Yet :(";
+      }
+      
+      UILabel *tallestLabel = cell.bodyLabel;
+      
+      if ([cell.firstAnswerBody intrinsicContentSize].height > [cell.bodyLabel intrinsicContentSize].height) {
+        tallestLabel = cell.firstAnswerBody;
+      }
+      if ([cell.secondAnswerBody intrinsicContentSize].height > [tallestLabel intrinsicContentSize].height) {
+        tallestLabel = cell.secondAnswerBody;
+      }
+      
+      CGFloat offset = [tallestLabel intrinsicContentSize].height - [cell.bodyLabel intrinsicContentSize].height;
+      NSLog(@"%f", offset);
+      cell.scrollViewHeightConstraint.constant = offset;
+      [self.tableView beginUpdates];
+      [self.tableView endUpdates];
+    }];
+    
     [UIView animateWithDuration:1.0 animations:^{
       cell.bodyLabel.alpha = 1;
+      //cell.closeButton.alpha = 1;
+      cell.swipeLabel.alpha = 1;
     }];
   }
 }
@@ -161,9 +245,56 @@
   
 }
 
+-(BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+  return YES;
+}
 
+-(void)getTwoBestAnswersForQuestion:(Question *)question completionHandler:(void (^)(NSArray * answers))completionHandler{
+  NSLog(@"BEST ANSWERS CALLED!");
+  [self.netController getAnswersForQuestionID:question.questionID completionHandler:^(NSArray *answers, NSError *error) {
+    NSLog(@"COMPLETION HANDLER CALLED!");
+    Answer *chosenAnswer;
+    Answer *highestAnswer = answers[0];
+    for (Answer *answer in answers) {
+      if (answer.score == highestAnswer.score) {
+        highestAnswer = answer;
+      }
+      if (answer.isAccepted) {
+        chosenAnswer = answer;
+      }
+    }
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+      completionHandler(@[highestAnswer,chosenAnswer]);
+    }];
+  }];
+  
+}
 
-
-
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
+  NSLog(@"%@",[[scrollView.superview.superview.superview class] description]);
+  
+}
+- (IBAction)backButtonPressed:(id)sender {
+  
+  self.titleBarTopSpaceConstraint.constant = -65;
+  
+  [UIView animateWithDuration:0.4 animations:^{
+  [self.view layoutSubviews];
+  } completion:^(BOOL finished) {
+  [UIView animateWithDuration:0.4
+  delay:0.1
+  options:UIViewAnimationOptionAllowUserInteraction
+  animations:^{
+  for (QuestionCell *cell in [self.tableView visibleCells]) {
+  cell.transform = CGAffineTransformMakeScale(.8, .8);
+  cell.alpha = 0;
+  }
+  }
+  completion:^(BOOL finished) {
+  [self dismissViewControllerAnimated:NO completion:nil];
+  }];
+  }];
+  
+}
 
 @end

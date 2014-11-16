@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
-@interface QuestionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@interface QuestionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate, UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSString *searchTerm;
 @property (weak, nonatomic) IBOutlet UINavigationBar *titleBar;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *titleBarTopSpaceConstraint;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 @end

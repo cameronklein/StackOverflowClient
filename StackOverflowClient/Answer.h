@@ -17,6 +17,8 @@
 @property (nonatomic, strong) NSString* ownerAvatarURL;
 @property (nonatomic, strong) NSString* title;
 @property (nonatomic, strong) NSString* body;
+@property (nonatomic, strong) NSNumber* score;
+@property BOOL isAccepted;
 @property double creationDate;
 
 @end

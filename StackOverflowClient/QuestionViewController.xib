@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionViewController">
             <connections>
+                <outlet property="backButton" destination="p3A-kv-lFK" id="QvQ-A6-H77"/>
                 <outlet property="tableView" destination="Qm5-M9-FZu" id="EZ5-40-Gkw"/>
                 <outlet property="titleBar" destination="V2W-qk-baM" id="ESl-ow-ffe"/>
                 <outlet property="titleBarTopSpaceConstraint" destination="lvX-JX-v5K" id="MVy-hY-Oje"/>
@@ -42,7 +43,11 @@
                     </textAttributes>
                     <items>
                         <navigationItem title="Title" id="9B4-R8-Ott">
-                            <barButtonItem key="leftBarButtonItem" id="p3A-kv-lFK"/>
+                            <barButtonItem key="leftBarButtonItem" title="Back" id="p3A-kv-lFK">
+                                <connections>
+                                    <action selector="backButtonPressed:" destination="-1" id="YQt-bM-PNZ"/>
+                                </connections>
+                            </barButtonItem>
                         </navigationItem>
                     </items>
                 </navigationBar>

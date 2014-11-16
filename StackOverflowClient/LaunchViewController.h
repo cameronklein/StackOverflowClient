@@ -18,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *thirdLabel;
 @property (weak, nonatomic) IBOutlet UIButton *searchButton;
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
+@property (weak, nonatomic) IBOutlet UIView *outerWarningView;
+@property (weak, nonatomic) IBOutlet UIView *innnerWarningView;
 
 @end

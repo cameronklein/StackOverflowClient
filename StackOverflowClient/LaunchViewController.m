@@ -18,7 +18,37 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+  self.searchField.adjustsFontSizeToFitWidth = YES;
+  self.outerWarningView.layer.cornerRadius = 5;
+  self.innnerWarningView.layer.cornerRadius = 5;
+  self.innnerWarningView.layer.borderColor = [[UIColor redColor] CGColor];
+  self.innnerWarningView.layer.borderWidth = 1;
+  
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  self.searchField.text = @"";
+  if ([[NSUserDefaults standardUserDefaults] valueForKey:@"access_token"] != nil) {
+    self.outerWarningView.hidden = YES;
+  } else {
+    self.outerWarningView.hidden = NO;
+  }
+  
+  [UIView animateWithDuration:0.4
+                        delay:0.2
+                      options:UIViewAnimationOptionAllowUserInteraction
+                   animations:^{
+                     self.mainLabel.alpha = 1;
+                     self.subLabel.alpha = 1;
+                     self.thirdLabel.alpha = 1;
+                     self.searchButton.alpha = 1;
+                     self.searchField.alpha = 1;
+                   }
+                   completion:^(BOOL finished) {
+                     
+                   }];
+
 }
 
 - (void)didReceiveMemoryWarning {
