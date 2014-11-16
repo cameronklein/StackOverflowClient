@@ -65,10 +65,10 @@
                         <action selector="searchButtonPressed:" destination="-1" eventType="touchUpInside" id="Eyg-72-3vp"/>
                     </connections>
                 </button>
-                <view alpha="0.79999999999999982" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoL-L7-eW9">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoL-L7-eW9">
                     <rect key="frame" x="8" y="472" width="405" height="120"/>
                     <subviews>
-                        <view alpha="0.79999999999999982" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4q-57-ck8">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4q-57-ck8">
                             <rect key="frame" x="2" y="2" width="401" height="116"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgE-T5-bMh">

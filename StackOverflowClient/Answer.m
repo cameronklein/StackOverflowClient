@@ -7,6 +7,7 @@
 //
 
 #import "Answer.h"
+#import <NSString-HTML/NSString+HTML.h>
 
 @implementation Answer : NSObject
 
@@ -24,11 +25,24 @@
     answer.ownerID    = (NSInteger)   ownerDict[@"user_id"];
     answer.ownerName  = (NSString *)  ownerDict[@"display_name"];
     answer.title      = (NSString *)  item[@"title"];
-    answer.body       = (NSString *)  item[@"body"];
     answer.score      = item[@"score"];
     answer.isAccepted = item[@"is_accepted"];
     answer.creationDate  = [item[@"creation_date"] doubleValue];
     answer.ownerAvatarURL  = (NSString *)  ownerDict[@"profile_image"];
+    
+    NSString *rawString = item[@"body"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<pre><code>" withString:@"---BEGIN CODE---\n\n"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</code></pre>" withString:@"\n---END CODE---"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<blockquote>" withString:@"----------\n\n"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</blockquote>" withString:@"\n\n----------"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<li>" withString:@"   -"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</li>" withString:@""];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<ul>" withString:@""];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</ul>" withString:@""];
+    answer.body = [rawString kv_decodeHTMLCharacterEntities];
+    
     [tempArray addObject:answer];
   }
   

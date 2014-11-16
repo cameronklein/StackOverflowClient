@@ -30,10 +30,23 @@
     question.ownerID    = (NSInteger)   ownerDict[@"user_id"];
     question.ownerName  = (NSString *)  ownerDict[@"display_name"];
     question.title      = (NSString *)  item[@"title"];
-    question.body       = (NSString *)  item[@"body"];
     question.isAnswered = (BOOL)        item[@"is_answered"];
     question.creationDate  = [item[@"creation_date"] doubleValue];
     question.ownerAvatarURL  = (NSString *)  ownerDict[@"profile_image"];
+    
+    NSString *rawString = item[@"body"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<p>" withString:@""];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</p>" withString:@""];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<pre><code>" withString:@"---BEGIN CODE---\n\n"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</code></pre>" withString:@"\n---END CODE---"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<blockquote>" withString:@"----------\n\n"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</blockquote>" withString:@"\n\n----------"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<li>" withString:@"   -"];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</li>" withString:@""];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"<ul>" withString:@""];
+    rawString = [rawString stringByReplacingOccurrencesOfString:@"</ul>" withString:@""];
+    question.body = rawString;
+    
     [tempArray addObject:question];
   }
   

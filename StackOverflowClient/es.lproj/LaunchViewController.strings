@@ -1,0 +1,21 @@
+
+/* Class = "IBUILabel"; text = "Due to restrictions on Stack Overflow's API, you will be limited to 30 requests without logging in. Others on the same network using the app may limit this futher."; ObjectID = "BgE-T5-bMh"; */
+"BgE-T5-bMh.text" = "Debido a la limitación de la API , que estará limitado a 30 solicitudes sin iniciar sesión.";
+
+/* Class = "IBUITextField"; placeholder = "What do you need help with?"; ObjectID = "OcC-cp-Rig"; */
+"OcC-cp-Rig.placeholder" = "¿Qué necesitas ayuda?";
+
+/* Class = "IBUILabel"; text = "Stack Overflow"; ObjectID = "Y1t-SQ-JW5"; */
+"Y1t-SQ-JW5.text" = "Stack Overflow";
+
+/* Class = "IBUILabel"; text = "Quick Q&A"; ObjectID = "g4b-iZ-u45"; */
+"g4b-iZ-u45.text" = "Rápido P&R";
+
+/* Class = "IBUIButton"; normalTitle = "Log in to avoid rate limit"; ObjectID = "kh7-25-PrO"; */
+"kh7-25-PrO.normalTitle" = "Iniciar Sesión";
+
+/* Class = "IBUILabel"; text = "Quick answers for all your coding questions."; ObjectID = "ltW-3D-gPz"; */
+"ltW-3D-gPz.text" = "Respuestas rápidas para todas sus preguntas de programación";
+
+/* Class = "IBUIButton"; normalTitle = "Search"; ObjectID = "nat-W2-VOE"; */
+"nat-W2-VOE.normalTitle" = "Search";

@@ -93,6 +93,7 @@
     NSLog(@"Adding constraints!");
     [cell.innerView addConstraint:cell.firstCollapsibleConstraint];
   }
+  cell.secondCollapsibleContstraint.constant = 8;
   cell.tag = 0;
   cell.scrollView.contentOffset = CGPointMake(0, 0);
   cell.titleLabel.text = question.title;
@@ -149,11 +150,6 @@
     [self.tableView beginUpdates];
     [self.tableView endUpdates];
     cell.bodyLabel.alpha = 0;
-    
-//    UIView *newView = [cell.innerInnerView copy];
-//    CGPoint newCenter = CGPointMake(cell.innerInnerView.center.x + cell.innerInnerView.frame.size.width, cell.innerInnerView.center.y);
-//    [cell.scrollView addSubview:newView];
-//    newView.center = newCenter;
     
     [self getTwoBestAnswersForQuestion:question completionHandler:^(NSArray *answers) {
       NSLog(@"COMPLETION HANDLER TWO");

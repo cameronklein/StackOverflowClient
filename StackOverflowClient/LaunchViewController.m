@@ -23,6 +23,8 @@
   self.innnerWarningView.layer.cornerRadius = 5;
   self.innnerWarningView.layer.borderColor = [[UIColor redColor] CGColor];
   self.innnerWarningView.layer.borderWidth = 1;
+  self.innnerWarningView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
+  self.outerWarningView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.8];
   
 }
 
@@ -85,9 +87,6 @@
     
     [[NSUserDefaults standardUserDefaults] setValue:token forKey:@"access_token"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    [self presentViewController:[storyboard instantiateInitialViewController] animated:true completion:nil];
     
   } else {
     decisionHandler(WKNavigationActionPolicyAllow);

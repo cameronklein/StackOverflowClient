@@ -51,8 +51,10 @@ static NSString *const postURL = @"https://stackexchange.com/oauth/access_token"
 - (NSString *) getAuthenticatedURLQueries {
   
   NSString *urlString = @"&site=stackoverflow";
-  urlString = [urlString stringByAppendingString:@"&access_token="];
-  urlString = [urlString stringByAppendingString:[[NSUserDefaults standardUserDefaults] valueForKey:@"access_token"]];
+  if ([[NSUserDefaults standardUserDefaults] valueForKey:@"access_token"] != nil) {
+    urlString = [urlString stringByAppendingString:@"&access_token="];
+    urlString = [urlString stringByAppendingString:[[NSUserDefaults standardUserDefaults] valueForKey:@"access_token"]];
+  }
   urlString = [urlString stringByAppendingString:@"&key="];
   urlString = [urlString stringByAppendingString:@"4lQBbDlbYN2qTOduOtH*nw(("];
   
@@ -62,10 +64,13 @@ static NSString *const postURL = @"https://stackexchange.com/oauth/access_token"
 
 - (void) fetchQuestionsWithSearchTerm:(NSString *)searchTerm completionHandler:(void (^)(NSArray * result, NSError * error))completionHandler {
   
+  // let formattedSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
+  
+  NSString *newString = [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"];
   NSLog(@"Fetch method called!");
   NSString *urlString = stackOverFlowURL;
   urlString = [urlString stringByAppendingString:@"search?order=desc&sort=activity&filter=withbody&intitle="];
-  urlString = [urlString stringByAppendingString:searchTerm];
+  urlString = [urlString stringByAppendingString:newString];
   urlString = [urlString stringByAppendingString:[self getAuthenticatedURLQueries]];
                
   NSLog(@"%@", urlString);
