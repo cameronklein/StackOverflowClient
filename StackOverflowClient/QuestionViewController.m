@@ -21,6 +21,7 @@
 @property NSMutableArray *shownCellIndexes;
 @property NSMutableArray *selectedCellIndexes;
 @property UIPanGestureRecognizer *panRecognizer;
+@property BOOL resultsCameBack;
 @end
 
 @implementation QuestionViewController
@@ -48,11 +49,15 @@
   [self.panRecognizer addTarget:self action:@selector(didPan:)];
   
   [self.backButton setTitleTextAttributes:@{NSFontAttributeName: [UIFont fontWithName:@"AvenirNext-UltraLight" size:16.0],NSForegroundColorAttributeName: [UIColor blueColor]} forState:UIControlStateNormal];
+  
+  self.view.layer.cornerRadius = 15;
+  self.view.clipsToBounds = true;
 
 }
 
 -(void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  self.resultsCameBack = NO;
   //self.titleBar.center = CGPointMake(self.titleBar.center.x, self.titleBar.center.y - 65);
   [self.netController fetchQuestionsWithSearchTerm:self.searchTerm completionHandler:^(NSArray *result, NSError *error) {
     if (error != nil) {
@@ -60,6 +65,7 @@
     } else {
       self.questions = result;
       [self.tableView reloadData];
+      self.resultsCameBack = YES;
     }
   }];
   self.titleBar.topItem.title = [NSString stringWithFormat:@"Results for \"%@\"", self.searchTerm];
@@ -81,13 +87,16 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+  if (self.questions.count == 0) {
+    return 1;
+  }
   return self.questions.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+  
   QuestionCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"QUESTION_CELL" forIndexPath:indexPath];
-  Question* question = self.questions[indexPath.row];
-  //cell.bodyLabel.text = @"";
+  
   [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
   if (cell.tag == 1) {
     NSLog(@"Adding constraints!");
@@ -96,30 +105,47 @@
   cell.secondCollapsibleContstraint.constant = 8;
   cell.tag = 0;
   cell.scrollView.contentOffset = CGPointMake(0, 0);
-  cell.titleLabel.text = question.title;
-  NSString *strippedText = [question.body kv_encodeHTMLCharacterEntities];
-  
-  cell.bodyLabel.text = strippedText;
-  cell.innerTitleLabel.text = @"Question";
-  
-  UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] init];
-  [self.panRecognizer addTarget:self action:@selector(didPan:)];
-  [cell.innerInnerView addGestureRecognizer:recognizer];
-  
-  recognizer.delegate = self;
-  cell.scrollView.delegate = self;
   
   
-  NSString *tags = @"";
-  for (NSString *tag in question.tags) {
-    tags = [tags stringByAppendingString:@" #"];
-    tags = [tags stringByAppendingString:tag];
-  }
-  cell.tagLabel.text = tags;
-  NSTimeInterval interval = (double)question.creationDate;
-  NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
-  cell.timeLabel.text = [self.formatter stringFromDate:date];
+  if (self.questions.count > 0) {
 
+    Question* question = self.questions[indexPath.row];
+    //cell.bodyLabel.text = @"";
+    
+    
+    cell.titleLabel.text = question.title;
+    NSString *strippedText = [question.body kv_encodeHTMLCharacterEntities];
+    
+    cell.bodyLabel.text = strippedText;
+    cell.innerTitleLabel.text = @"Question";
+    
+    UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] init];
+    [self.panRecognizer addTarget:self action:@selector(didPan:)];
+    [cell.innerInnerView addGestureRecognizer:recognizer];
+    
+    recognizer.delegate = self;
+    cell.scrollView.delegate = self;
+    
+    
+    NSString *tags = @"";
+    for (NSString *tag in question.tags) {
+      tags = [tags stringByAppendingString:@" #"];
+      tags = [tags stringByAppendingString:tag];
+    }
+    cell.tagLabel.text = tags;
+    NSTimeInterval interval = (double)question.creationDate;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:interval];
+    cell.timeLabel.text = [self.formatter stringFromDate:date];
+    
+    [self.shownCellIndexes addObject:indexPath];
+      
+  } else {
+    if (self.resultsCameBack) {
+      cell.titleLabel.text = @"No results found";
+    } else {
+      cell.titleLabel.text = @"Searching...";
+    }
+  }
   
   if ([self.shownCellIndexes containsObject:indexPath] == NO) {
     cell.transform = CGAffineTransformMakeScale(.8, .8);
@@ -130,7 +156,8 @@
     }];
   }
   
-  [self.shownCellIndexes addObject:indexPath];
+  
+  
   return cell;
 
 }
@@ -266,10 +293,6 @@
   
 }
 
--(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
-  NSLog(@"%@",[[scrollView.superview.superview.superview class] description]);
-  
-}
 - (IBAction)backButtonPressed:(id)sender {
   
   self.titleBarTopSpaceConstraint.constant = -65;

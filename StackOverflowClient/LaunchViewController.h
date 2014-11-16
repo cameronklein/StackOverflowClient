@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchField;
 @property (weak, nonatomic) IBOutlet UIView *outerWarningView;
 @property (weak, nonatomic) IBOutlet UIView *innnerWarningView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomConstraint;
 
 @end

@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib {
 
-  self.innerView.layer.cornerRadius = 5;
+  self.innerView.layer.cornerRadius = 15;
   self.innerView.clipsToBounds = true;
 }
 

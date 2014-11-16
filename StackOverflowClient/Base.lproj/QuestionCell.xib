@@ -23,6 +23,12 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe for Answers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdM-hC-Dyg">
+                                <rect key="frame" x="8" y="8" width="439" height="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2V4-ez-sNH">
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="439" placeholderIntrinsicHeight="57" translatesAutoresizingMaskIntoConstraints="NO" id="qsD-wt-BAl" userLabel="Inner Inner View">
@@ -170,31 +176,13 @@
                                     </mask>
                                 </variation>
                             </scrollView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKS-kt-Mcm">
-                                <rect key="frame" x="8" y="8" width="31" height="29"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
-                                <state key="normal" title="Close">
-                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didPressCloseButton:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OyU-Ug-0I2"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe for Answers" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdM-hC-Dyg">
-                                <rect key="frame" x="349" y="8" width="98" height="17"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="hKS-kt-Mcm" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="102-DP-WhI"/>
                             <constraint firstItem="5ae-zI-AKR" firstAttribute="top" secondItem="qU3-EG-095" secondAttribute="top" constant="8" id="2cZ-aO-kfE"/>
                             <constraint firstAttribute="bottom" secondItem="5ae-zI-AKR" secondAttribute="bottom" constant="8" id="5qk-jJ-UbH"/>
                             <constraint firstItem="2V4-ez-sNH" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="8BQ-95-g5Y"/>
                             <constraint firstItem="2V4-ez-sNH" firstAttribute="top" secondItem="5ae-zI-AKR" secondAttribute="bottom" constant="8" id="Brr-2V-wpJ"/>
-                            <constraint firstItem="5ae-zI-AKR" firstAttribute="top" secondItem="hKS-kt-Mcm" secondAttribute="bottom" constant="8" id="Djo-5q-ad7"/>
                             <constraint firstAttribute="trailing" secondItem="2V4-ez-sNH" secondAttribute="trailing" constant="8" id="RKF-Us-wSF"/>
                             <constraint firstItem="5ae-zI-AKR" firstAttribute="top" secondItem="WdM-hC-Dyg" secondAttribute="bottom" constant="8" id="TfE-dU-UzU"/>
                             <constraint firstItem="qsD-wt-BAl" firstAttribute="width" secondItem="5ae-zI-AKR" secondAttribute="width" id="UtA-UI-HpC"/>
@@ -202,14 +190,13 @@
                             <constraint firstItem="5ae-zI-AKR" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="Vv0-TM-4sE"/>
                             <constraint firstItem="5ae-zI-AKR" firstAttribute="top" secondItem="2V4-ez-sNH" secondAttribute="bottom" constant="-281" id="ZY4-VY-OqR"/>
                             <constraint firstAttribute="trailing" secondItem="5ae-zI-AKR" secondAttribute="trailing" constant="8" id="a3f-Yg-Efq"/>
-                            <constraint firstItem="hKS-kt-Mcm" firstAttribute="top" secondItem="qU3-EG-095" secondAttribute="top" constant="8" id="dhi-pT-k5P"/>
                             <constraint firstAttribute="bottom" secondItem="2V4-ez-sNH" secondAttribute="bottom" priority="999" constant="8" id="jMP-PV-65I"/>
                             <constraint firstItem="WdM-hC-Dyg" firstAttribute="top" secondItem="qU3-EG-095" secondAttribute="top" constant="8" id="s7K-aR-lRF"/>
+                            <constraint firstItem="WdM-hC-Dyg" firstAttribute="leading" secondItem="qU3-EG-095" secondAttribute="leading" constant="8" id="soG-tK-bru"/>
                             <constraint firstAttribute="trailing" secondItem="WdM-hC-Dyg" secondAttribute="trailing" constant="8" id="v0h-yE-pMg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="Djo-5q-ad7"/>
                                 <exclude reference="TfE-dU-UzU"/>
                                 <exclude reference="ZY4-VY-OqR"/>
                             </mask>
@@ -227,7 +214,6 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="bodyLabel" destination="hI1-Ww-Tcn" id="YG4-B2-JOl"/>
-                <outlet property="closeButton" destination="hKS-kt-Mcm" id="VfH-dN-wD6"/>
                 <outlet property="firstAnswerBody" destination="rr5-92-N1f" id="6Lc-0T-OD2"/>
                 <outlet property="firstAnswerTitle" destination="jAt-GL-SR9" id="unl-2Z-jCi"/>
                 <outlet property="firstAnswerView" destination="GY2-dy-AwW" id="mWE-Nj-Kao"/>

@@ -138,6 +138,33 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		7E15A7151A187DDC000957CA /* DEPRECATED */ = {
+			isa = PBXGroup;
+			children = (
+				7ED96D7C1A17D99F000538A3 /* QuestionAnswerPage.xib */,
+				7E3FD2AF1A12829000F17611 /* SingleQuestionViewController.xib */,
+				7E3FD2801A11328300F17611 /* Main.storyboard */,
+				7E3FD2B41A1284CA00F17611 /* QuestionCollectionViewCell.xib */,
+				7E3FD2B91A128A1800F17611 /* AnswerCollectionViewCell.xib */,
+				7E879B771A141A0B00EE2588 /* ProfileCell.xib */,
+				7E879B741A14194A00EE2588 /* ProfileCell.h */,
+				7E879B751A14194A00EE2588 /* ProfileCell.m */,
+				7E3FD2B21A1284CA00F17611 /* QuestionCollectionViewCell.h */,
+				7E3FD2B31A1284CA00F17611 /* QuestionCollectionViewCell.m */,
+				7E3FD2B71A128A1800F17611 /* AnswerCollectionViewCell.h */,
+				7E3FD2B81A128A1800F17611 /* AnswerCollectionViewCell.m */,
+				7ED96D7A1A17D99F000538A3 /* QuestionAnswerPage.h */,
+				7ED96D7B1A17D99F000538A3 /* QuestionAnswerPage.m */,
+				7E879B791A15211000EE2588 /* RootViewController.h */,
+				7E879B7A1A15211000EE2588 /* RootViewController.m */,
+				7E3FD27D1A11328300F17611 /* DetailViewController.h */,
+				7E3FD27E1A11328300F17611 /* DetailViewController.m */,
+				7E3FD2AD1A12829000F17611 /* SingleQuestionViewController.h */,
+				7E3FD2AE1A12829000F17611 /* SingleQuestionViewController.m */,
+			);
+			name = DEPRECATED;
+			sourceTree = "<group>";
+		};
 		7E3FD2671A11328300F17611 = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +195,7 @@
 				7E3FD2831A11328300F17611 /* Images.xcassets */,
 				7E3FD27A1A11328300F17611 /* StackOverflowClient.xcdatamodeld */,
 				7E3FD2731A11328300F17611 /* Supporting Files */,
+				7E15A7151A187DDC000957CA /* DEPRECATED */,
 			);
 			path = StackOverflowClient;
 			sourceTree = "<group>";
@@ -220,16 +248,8 @@
 				7EC5E6D31A12B05B00B25B8F /* LaunchViewController.m */,
 				7E2B42F01A171AD600B1D890 /* QuestionViewController.h */,
 				7E2B42F11A171AD700B1D890 /* QuestionViewController.m */,
-				7E879B791A15211000EE2588 /* RootViewController.h */,
-				7E879B7A1A15211000EE2588 /* RootViewController.m */,
-				7E3FD27D1A11328300F17611 /* DetailViewController.h */,
-				7E3FD27E1A11328300F17611 /* DetailViewController.m */,
-				7E3FD2AD1A12829000F17611 /* SingleQuestionViewController.h */,
-				7E3FD2AE1A12829000F17611 /* SingleQuestionViewController.m */,
 				7E3FD29E1A1155E900F17611 /* NetworkController.h */,
 				7E3FD29C1A1155D800F17611 /* NetworkController.m */,
-				7ED96D7A1A17D99F000538A3 /* QuestionAnswerPage.h */,
-				7ED96D7B1A17D99F000538A3 /* QuestionAnswerPage.m */,
 				7E3FD2771A11328300F17611 /* AppDelegate.h */,
 				7E3FD2781A11328300F17611 /* AppDelegate.m */,
 			);
@@ -239,12 +259,6 @@
 		7E3FD2AC1A11A82C00F17611 /* VIEW */ = {
 			isa = PBXGroup;
 			children = (
-				7E879B741A14194A00EE2588 /* ProfileCell.h */,
-				7E879B751A14194A00EE2588 /* ProfileCell.m */,
-				7E3FD2B21A1284CA00F17611 /* QuestionCollectionViewCell.h */,
-				7E3FD2B31A1284CA00F17611 /* QuestionCollectionViewCell.m */,
-				7E3FD2B71A128A1800F17611 /* AnswerCollectionViewCell.h */,
-				7E3FD2B81A128A1800F17611 /* AnswerCollectionViewCell.m */,
 				7E3FD2A51A11A56000F17611 /* QuestionCell.h */,
 				7E3FD2A61A11A56000F17611 /* QuestionCell.m */,
 			);
@@ -254,15 +268,9 @@
 		7EC5E6D11A12A87B00B25B8F /* NIBS */ = {
 			isa = PBXGroup;
 			children = (
-				7E3FD2801A11328300F17611 /* Main.storyboard */,
 				7E2B42F21A171AD700B1D890 /* QuestionViewController.xib */,
-				7E879B771A141A0B00EE2588 /* ProfileCell.xib */,
-				7E3FD2B41A1284CA00F17611 /* QuestionCollectionViewCell.xib */,
-				7E3FD2B91A128A1800F17611 /* AnswerCollectionViewCell.xib */,
 				7E15A70D1A186A9A000957CA /* QuestionCell.xib */,
-				7ED96D7C1A17D99F000538A3 /* QuestionAnswerPage.xib */,
 				7E15A7121A186CF8000957CA /* LaunchViewController.xib */,
-				7E3FD2AF1A12829000F17611 /* SingleQuestionViewController.xib */,
 				7E3FD2851A11328300F17611 /* LaunchScreen.xib */,
 			);
 			name = NIBS;

@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LaunchViewController">
             <connections>
+                <outlet property="bottomConstraint" destination="JIC-1Q-cgY" id="sjo-3f-YWd"/>
                 <outlet property="innnerWarningView" destination="r4q-57-ck8" id="a1e-Gb-h9s"/>
                 <outlet property="mainLabel" destination="Y1t-SQ-JW5" id="evh-GL-t2o"/>
                 <outlet property="outerWarningView" destination="GoL-L7-eW9" id="Wfi-H2-k37"/>
@@ -18,11 +19,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="421" height="600"/>
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background.png" translatesAutoresizingMaskIntoConstraints="NO" id="gK8-s8-HFR">
-                    <rect key="frame" x="0.0" y="0.0" width="421" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Stack Overflow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1t-SQ-JW5">
                     <rect key="frame" x="105" y="100" width="213" height="46"/>
@@ -32,29 +33,29 @@
                     <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <size key="shadowOffset" width="0.0" height="-2"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quick Q&amp;A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4b-iZ-u45">
-                    <rect key="frame" x="137" y="154" width="148" height="41"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quick Q&amp;A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4b-iZ-u45">
+                    <rect key="frame" x="227" y="154" width="148" height="41"/>
                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="28"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <size key="shadowOffset" width="0.0" height="-2"/>
                 </label>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need help with?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OcC-cp-Rig">
-                    <rect key="frame" x="48" y="360" width="325" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What do you need help with?" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OcC-cp-Rig">
+                    <rect key="frame" x="48" y="367" width="504" height="30"/>
                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="search"/>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Quick answers for all your coding questions." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ltW-3D-gPz">
-                    <rect key="frame" x="50" y="223" width="321" height="55"/>
+                    <rect key="frame" x="50" y="223" width="500" height="55"/>
                     <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <size key="shadowOffset" width="0.0" height="-2"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nat-W2-VOE">
-                    <rect key="frame" x="173" y="398" width="75" height="45"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nat-W2-VOE">
+                    <rect key="frame" x="263" y="405" width="75" height="45"/>
                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
                     <size key="titleShadowOffset" width="0.0" height="2"/>
                     <state key="normal" title="Search">
@@ -66,13 +67,13 @@
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GoL-L7-eW9">
-                    <rect key="frame" x="8" y="472" width="405" height="120"/>
+                    <rect key="frame" x="8" y="472" width="584" height="120"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r4q-57-ck8">
-                            <rect key="frame" x="2" y="2" width="401" height="116"/>
+                            <rect key="frame" x="2" y="2" width="580" height="116"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgE-T5-bMh">
-                                    <rect key="frame" x="8" y="8" width="385" height="58"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BgE-T5-bMh">
+                                    <rect key="frame" x="8" y="8" width="564" height="58"/>
                                     <string key="text">Due to restrictions on Stack Overflow's API, you will be limited to 30 requests without logging in. Others on the same network using the app may limit this futher.</string>
                                     <fontDescription key="fontDescription" name="AvenirNext-UltraLight" family="Avenir Next" pointSize="14"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -80,8 +81,8 @@
                                     <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     <size key="shadowOffset" width="0.0" height="0.0"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh7-25-PrO">
-                                    <rect key="frame" x="32" y="71" width="337" height="33"/>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kh7-25-PrO">
+                                    <rect key="frame" x="32" y="71" width="516" height="33"/>
                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="15"/>
                                     <size key="titleShadowOffset" width="0.0" height="1"/>
                                     <state key="normal" title="Log in to avoid rate limit">
@@ -126,7 +127,7 @@
                 <constraint firstAttribute="trailing" secondItem="OcC-cp-Rig" secondAttribute="trailing" constant="48" id="MBV-uV-LP4"/>
                 <constraint firstAttribute="trailing" secondItem="GoL-L7-eW9" secondAttribute="trailing" constant="8" id="PNj-Ox-ulK"/>
                 <constraint firstItem="gK8-s8-HFR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SgP-ap-99K"/>
-                <constraint firstItem="nat-W2-VOE" firstAttribute="top" secondItem="OcC-cp-Rig" secondAttribute="bottom" constant="8" id="THh-Sy-Jay"/>
+                <constraint firstItem="nat-W2-VOE" firstAttribute="top" secondItem="OcC-cp-Rig" secondAttribute="bottom" priority="999" constant="8" id="THh-Sy-Jay"/>
                 <constraint firstAttribute="centerX" secondItem="Y1t-SQ-JW5" secondAttribute="centerX" id="TVZ-Pp-DJB"/>
                 <constraint firstItem="g4b-iZ-u45" firstAttribute="top" secondItem="Y1t-SQ-JW5" secondAttribute="bottom" constant="8" id="aoL-Li-GfJ"/>
                 <constraint firstItem="ltW-3D-gPz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="dLh-eg-8cB"/>

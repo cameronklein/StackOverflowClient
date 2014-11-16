@@ -66,13 +66,13 @@ static NSString *const postURL = @"https://stackexchange.com/oauth/access_token"
   
   // let formattedSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.LiteralSearch, range: nil)
   
-  NSString *newString = [searchTerm stringByReplacingOccurrencesOfString:@" " withString:@"+"];
   NSLog(@"Fetch method called!");
   NSString *urlString = stackOverFlowURL;
   urlString = [urlString stringByAppendingString:@"search?order=desc&sort=activity&filter=withbody&intitle="];
-  urlString = [urlString stringByAppendingString:newString];
+  urlString = [urlString stringByAppendingString:searchTerm];
   urlString = [urlString stringByAppendingString:[self getAuthenticatedURLQueries]];
-               
+  urlString = [urlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+  
   NSLog(@"%@", urlString);
   NSURL *url = [[NSURL alloc] initWithString:urlString];
   
