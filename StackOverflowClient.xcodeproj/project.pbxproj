@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		320B618B413FD84B5AEC37F2 /* libPods-StackOverflowClient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C09651983FA2F0C781A267D /* libPods-StackOverflowClient.a */; };
 		7E15A70B1A186A9A000957CA /* QuestionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E15A70D1A186A9A000957CA /* QuestionCell.xib */; };
 		7E15A7101A186CF8000957CA /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E15A7121A186CF8000957CA /* LaunchViewController.xib */; };
 		7E2B42EF1A17163200B1D890 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E2B42EE1A17163200B1D890 /* Background.png */; };
@@ -52,8 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F48873A9EE0A6C920DE7C4F /* Pods-StackOverflowClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowClient/Pods-StackOverflowClient.debug.xcconfig"; sourceTree = "<group>"; };
-		7C09651983FA2F0C781A267D /* libPods-StackOverflowClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StackOverflowClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E15A70C1A186A9A000957CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/QuestionCell.xib; sourceTree = "<group>"; };
 		7E15A70F1A186A9F000957CA /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/QuestionCell.strings; sourceTree = "<group>"; };
 		7E15A7111A186CF8000957CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchViewController.xib; sourceTree = "<group>"; };
@@ -107,7 +104,6 @@
 		7ED96D7A1A17D99F000538A3 /* QuestionAnswerPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionAnswerPage.h; sourceTree = "<group>"; };
 		7ED96D7B1A17D99F000538A3 /* QuestionAnswerPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionAnswerPage.m; sourceTree = "<group>"; };
 		7ED96D7C1A17D99F000538A3 /* QuestionAnswerPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionAnswerPage.xib; sourceTree = "<group>"; };
-		AC4BD308680938BEACBB8630 /* Pods-StackOverflowClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StackOverflowClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-StackOverflowClient/Pods-StackOverflowClient.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +111,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				320B618B413FD84B5AEC37F2 /* libPods-StackOverflowClient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,15 +124,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		78C38AA955F76D6E5E6C63B5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1F48873A9EE0A6C920DE7C4F /* Pods-StackOverflowClient.debug.xcconfig */,
-				AC4BD308680938BEACBB8630 /* Pods-StackOverflowClient.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		7E15A7151A187DDC000957CA /* DEPRECATED */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,8 +157,6 @@
 				7E3FD2721A11328300F17611 /* StackOverflowClient */,
 				7E3FD28F1A11328300F17611 /* StackOverflowClientTests */,
 				7E3FD2711A11328300F17611 /* Products */,
-				78C38AA955F76D6E5E6C63B5 /* Pods */,
-				923F709DBC6EB39F34CF5D88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,14 +260,6 @@
 			name = NIBS;
 			sourceTree = "<group>";
 		};
-		923F709DBC6EB39F34CF5D88 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7C09651983FA2F0C781A267D /* libPods-StackOverflowClient.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -291,11 +267,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7E3FD2961A11328300F17611 /* Build configuration list for PBXNativeTarget "StackOverflowClient" */;
 			buildPhases = (
-				7088F51C07A2EA2F2079F79C /* Check Pods Manifest.lock */,
 				7E3FD26C1A11328300F17611 /* Sources */,
 				7E3FD26D1A11328300F17611 /* Frameworks */,
 				7E3FD26E1A11328300F17611 /* Resources */,
-				2E318B8D3B8AA5E438B54ABC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -391,39 +365,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2E318B8D3B8AA5E438B54ABC /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StackOverflowClient/Pods-StackOverflowClient-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7088F51C07A2EA2F2079F79C /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7E3FD26C1A11328300F17611 /* Sources */ = {
@@ -587,7 +528,6 @@
 		};
 		7E3FD2971A11328300F17611 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F48873A9EE0A6C920DE7C4F /* Pods-StackOverflowClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StackOverflowClient/Info.plist;
@@ -598,7 +538,6 @@
 		};
 		7E3FD2981A11328300F17611 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AC4BD308680938BEACBB8630 /* Pods-StackOverflowClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StackOverflowClient/Info.plist;

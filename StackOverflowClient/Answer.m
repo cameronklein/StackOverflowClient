@@ -7,7 +7,6 @@
 //
 
 #import "Answer.h"
-#import <NSString-HTML/NSString+HTML.h>
 
 @implementation Answer : NSObject
 
@@ -41,7 +40,7 @@
     rawString = [rawString stringByReplacingOccurrencesOfString:@"</li>" withString:@""];
     rawString = [rawString stringByReplacingOccurrencesOfString:@"<ul>" withString:@""];
     rawString = [rawString stringByReplacingOccurrencesOfString:@"</ul>" withString:@""];
-    answer.body = [rawString kv_decodeHTMLCharacterEntities];
+    answer.body = rawString;
     
     [tempArray addObject:answer];
   }

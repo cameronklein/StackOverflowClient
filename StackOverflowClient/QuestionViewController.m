@@ -11,7 +11,6 @@
 #import "Question.h"
 #import "Answer.h"
 #import "QuestionCell.h"
-#import <NSString-HTML/NSString+HTML.h>
 
 @interface QuestionViewController ()
 
@@ -114,9 +113,7 @@
     
     
     cell.titleLabel.text = question.title;
-    NSString *strippedText = [question.body kv_encodeHTMLCharacterEntities];
-    
-    cell.bodyLabel.text = strippedText;
+    cell.bodyLabel.text = question.body;
     cell.innerTitleLabel.text = @"Question";
     
     UIPanGestureRecognizer *recognizer = [[UIPanGestureRecognizer alloc] init];
